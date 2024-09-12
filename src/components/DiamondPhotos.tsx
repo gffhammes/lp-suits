@@ -13,7 +13,7 @@ export const DiamondPhotos = (props: IDiamondPhotosProps) => {
         width: "100%",
         overflow: "hidden",
         position: "relative",
-        height: "50rem",
+        height: `calc(${diamondSize * 1.5}px + ${diamondsGap})`,
       }}
     >
       <Box
@@ -21,6 +21,8 @@ export const DiamondPhotos = (props: IDiamondPhotosProps) => {
           position: "absolute",
           top: 0,
           left: "50%",
+          height: diamondSize,
+          widht: diamondSize,
           transform: `translateX(calc(-100% - ${diamondsGap}))`,
         }}
       >
@@ -32,6 +34,8 @@ export const DiamondPhotos = (props: IDiamondPhotosProps) => {
           position: "absolute",
           left: "50%",
           top: 0,
+          height: diamondSize,
+          widht: diamondSize,
           transform: `translate(-50%, calc(50% + ${diamondsGap}))`,
         }}
       >
@@ -43,6 +47,8 @@ export const DiamondPhotos = (props: IDiamondPhotosProps) => {
           position: "absolute",
           top: 0,
           right: "50%",
+          height: diamondSize,
+          widht: diamondSize,
           transform: `translateX(calc(100% + ${diamondsGap}))`,
         }}
       >
