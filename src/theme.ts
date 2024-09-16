@@ -21,10 +21,15 @@ const theme = createTheme({
     allVariants: { color: "white" },
     h1: {
       fontFamily: taviraj.style.fontFamily,
-      fontSize: 32,
+      fontSize: 48,
       fontWeight: 300,
     },
     h2: {
+      fontFamily: taviraj.style.fontFamily,
+      fontSize: 32,
+      fontWeight: 300,
+    },
+    h3: {
       fontFamily: taviraj.style.fontFamily,
       fontSize: 24,
       fontWeight: 300,
@@ -40,6 +45,7 @@ const theme = createTheme({
   },
   palette: {
     primary: { main: "#ffffff" },
+    secondary: { main: "#311120" },
   },
   components: {
     MuiButton: {
