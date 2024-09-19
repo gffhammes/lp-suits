@@ -4,7 +4,7 @@ import { Container, Divider, IconButton, Stack } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { IconsSection } from "@/components/IconsSection";
 import { SuitsOptionsSection } from "@/components/SuitsOptionsSection/SuitsOptionsSection";
-import { ReviewsSection } from "@/components/ReviewsSection";
+import { ReviewsSection } from "@/components/ReviewsSection/ReviewsSection";
 
 export default function Home() {
   return (
