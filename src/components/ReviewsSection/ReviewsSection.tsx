@@ -5,7 +5,7 @@ export interface IReviewsSectionProps {}
 
 export const ReviewsSection = (props: IReviewsSectionProps) => {
   return (
-    <Box sx={{ backgroundColor: "secondary.main", py: 10 }}>
+    <Box sx={{ backgroundColor: "secondary.main", py: 10, pb: 20 }}>
       <Stack gap={4}>
         <Container>
           <Typography variant="h2">

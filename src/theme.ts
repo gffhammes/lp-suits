@@ -21,18 +21,18 @@ const theme = createTheme({
     allVariants: { color: "white" },
     h1: {
       fontFamily: taviraj.style.fontFamily,
-      fontSize: 48,
-      fontWeight: 300,
+      fontSize: "clamp(32px, 5vh, 48px)",
+      fontWeight: 400,
     },
     h2: {
       fontFamily: taviraj.style.fontFamily,
       fontSize: 32,
-      fontWeight: 300,
+      fontWeight: 400,
     },
     h3: {
       fontFamily: taviraj.style.fontFamily,
       fontSize: 24,
-      fontWeight: 300,
+      fontWeight: 400,
     },
     body1: {
       color: "rgba(255,255,255,.6)",
