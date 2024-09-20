@@ -12,12 +12,12 @@ export const BigCTASection = (props: IBigCTASectionProps) => {
         backgroundColor: "white",
       }}
     >
-      <Stack sx={{ p: 3, pr: 0, flex: "0 0 16rem" }}>
-        <Typography color="secondary" variant="h2" fontSize={24}>
+      <Stack sx={{ p: 3, pr: 0, flex: "0 0 16rem" }} gap={1}>
+        <Typography color="secondary" variant="h3">
           Quer se vestir com muita elegância?
         </Typography>
 
-        <Typography color="secondary">
+        <Typography color="secondary.light">
           <strong>Clique aqui</strong> para agendar uma visita e{" "}
           <strong>ganhe uma consultoria de estilo</strong> para seu evento
         </Typography>

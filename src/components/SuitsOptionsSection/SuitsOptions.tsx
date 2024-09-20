@@ -3,7 +3,8 @@
 import { useState } from "react";
 import { ISuitsOption } from "./SuitsOptionsSection";
 import { SuitsOptionsSelector } from "./SuitsOptionsSelector";
-import { Box, Button, Stack, Typography } from "@mui/material";
+import { Box, Button, Container, Stack, Typography } from "@mui/material";
+import { SuitsOptionCard } from "./SuitsOptionCard";
 
 export interface ISuitsOptionsProps {
   suitsOptions: ISuitsOption[];
@@ -18,45 +19,20 @@ export const SuitsOptions = ({ suitsOptions }: ISuitsOptionsProps) => {
   );
 
   return (
-    <Stack gap={8} alignItems="center">
+    <Stack gap={4} alignItems="center">
       <SuitsOptionsSelector
         suitsOptions={suitsOptions}
         selectedOption={selectedOption}
         onSelectedOptionChange={(option) => setSelectedOption(option)}
       />
 
-      <Stack direction="row" height="15rem">
-        <Box
-          sx={{ height: "100%", flex: "0 0 10rem", backgroundColor: "#f4f4f4" }}
-        ></Box>
+      <Container>
+        <Stack gap={4} alignItems="center">
+          <SuitsOptionCard option={selectedOptionObject} />
 
-        <Box
-          sx={{
-            backgroundColor: "secondary.main",
-            px: 2,
-            py: 3,
-            height: "100%",
-            overflow: "hidden",
-          }}
-        >
-          <Stack gap={1}>
-            <Typography variant="h3">{selectedOptionObject?.label}</Typography>
-
-            <Typography
-              sx={{
-                display: "-webkit-box",
-                WebkitLineClamp: "5",
-                WebkitBoxOrient: "vertical",
-                overflow: "hidden",
-              }}
-            >
-              {selectedOptionObject?.description}
-            </Typography>
-          </Stack>
-        </Box>
-      </Stack>
-
-      <Button variant="contained">Quero provar</Button>
+          <Button variant="contained">Quero provar</Button>
+        </Stack>
+      </Container>
     </Stack>
   );
 };

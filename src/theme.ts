@@ -45,7 +45,7 @@ const theme = createTheme({
   },
   palette: {
     primary: { main: "#ffffff" },
-    secondary: { main: "#311120" },
+    secondary: { main: "#311120", light: "#85757c" },
   },
   components: {
     MuiButton: {

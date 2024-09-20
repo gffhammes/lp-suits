@@ -1,4 +1,4 @@
-import { DiamondPhotosSection } from "@/components/DiamondPhotosSection";
+import { DiamondPhotosSection } from "@/components/DiamondPhotosSection/DiamondPhotosSection";
 import { HeroSection } from "@/components/HeroSection";
 import { Container, Divider, IconButton, Stack } from "@mui/material";
 import { IconsSection } from "@/components/IconsSection";
