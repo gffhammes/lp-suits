@@ -1,5 +1,8 @@
 import { Box } from "@mui/material";
 import { DiamondPhoto } from "./DiamondPhoto";
+import foto1 from "../../public/images/2H0A9578.JPG";
+import foto2 from "../../public/images/2H0A9848.JPG";
+import foto3 from "../../public/images/2H0A9939.JPG";
 
 export interface IDiamondPhotosProps {}
 
@@ -26,7 +29,7 @@ export const DiamondPhotos = (props: IDiamondPhotosProps) => {
           transform: `translateX(calc(-100% - ${diamondsGap}))`,
         }}
       >
-        <DiamondPhoto size={diamondSize} src="https://picsum.photos/500/500" />
+        <DiamondPhoto size={diamondSize} src={foto1.src} />
       </Box>
 
       <Box
@@ -39,7 +42,7 @@ export const DiamondPhotos = (props: IDiamondPhotosProps) => {
           transform: `translate(-50%, calc(50% + ${diamondsGap}))`,
         }}
       >
-        <DiamondPhoto size={diamondSize} src="https://picsum.photos/500/500" />
+        <DiamondPhoto size={diamondSize} src={foto2.src} />
       </Box>
 
       <Box
@@ -52,7 +55,7 @@ export const DiamondPhotos = (props: IDiamondPhotosProps) => {
           transform: `translateX(calc(100% + ${diamondsGap}))`,
         }}
       >
-        <DiamondPhoto size={diamondSize} src="https://picsum.photos/500/500" />
+        <DiamondPhoto size={diamondSize} src={foto3.src} />
       </Box>
     </Box>
   );

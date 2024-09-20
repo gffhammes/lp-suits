@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import image from "../../public/images/bride-adjusting-her-boyfriend-s-bow-tie.webp";
 import Image from "next/image";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 export interface IHeroSectionProps {}
 
@@ -29,23 +30,31 @@ export const HeroSection = (props: IHeroSectionProps) => {
         />
       </Box>
 
-      <Container sx={{ position: "relative", pt: 30 }}>
-        <Stack gap={6} alignItems="flex-start">
-          <Stack gap={2} alignItems="flex-start">
-            <Typography variant="h1" maxWidth="15ch">
-              Aluguel de trajes com a elegância que você merece.
-            </Typography>
+      <Stack gap={6}>
+        <Container sx={{ position: "relative", pt: 25 }}>
+          <Stack gap={6} alignItems="flex-start">
+            <Stack gap={2} alignItems="flex-start">
+              <Typography variant="h1" maxWidth="15ch">
+                Aluguel de trajes com a elegância que você merece.
+              </Typography>
 
-            <Typography maxWidth="30ch" color="white">
-              Tenha muita presença com{" "}
-              <strong>trajes masculinos elegantes</strong> e ajustados com
-              perfeição para qualquer evento.
-            </Typography>
+              <Typography maxWidth="34ch" color="white">
+                Tenha muita presença com{" "}
+                <strong>trajes masculinos elegantes</strong> e ajustados com
+                perfeição para qualquer evento.
+              </Typography>
+            </Stack>
+
+            <Button variant="contained">Alugar traje</Button>
           </Stack>
+        </Container>
 
-          <Button variant="contained">Alugar traje</Button>
+        <Stack alignItems="center" justifyContent="center">
+          <IconButton color="primary" sx={{ fontSize: 48 }}>
+            <KeyboardArrowDownIcon fontSize="inherit" color="primary" />
+          </IconButton>
         </Stack>
-      </Container>
+      </Stack>
     </Box>
   );
 };
