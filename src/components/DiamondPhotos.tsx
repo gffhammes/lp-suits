@@ -1,8 +1,8 @@
 import { Box } from "@mui/material";
 import { DiamondPhoto } from "./DiamondPhoto";
-import foto1 from "../../public/images/2H0A9578.JPG";
-import foto2 from "../../public/images/2H0A9848.JPG";
-import foto3 from "../../public/images/2H0A9939.JPG";
+import foto1 from "../../public/images/2H0A9578.jpg";
+import foto2 from "../../public/images/2H0A9848.jpg";
+import foto3 from "../../public/images/2H0A9939.jpg";
 
 export interface IDiamondPhotosProps {}
 
