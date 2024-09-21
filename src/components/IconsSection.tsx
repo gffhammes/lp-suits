@@ -22,14 +22,14 @@ export const IconsSection = (props: IIconsSectionProps) => {
         gap={8}
         justifyContent="center"
         justifyItems="flex-start"
-        gridTemplateColumns={{ xs: "1fr", sm: "400px 400px" }}
+        gridTemplateColumns={{ xs: "1fr", md: "400px 400px" }}
         gridTemplateAreas={{
           xs: `
             'h2Mobile'
             'items'
             'cta'
           `,
-          sm: `
+          md: `
             'h2Desktop  items'
             'nothing    items'
           `,
@@ -40,7 +40,7 @@ export const IconsSection = (props: IIconsSectionProps) => {
           sx={{
             position: "sticky",
             top: 200,
-            display: { xs: "none", sm: "flex" },
+            display: { xs: "none", md: "flex" },
           }}
           gap={4}
           alignItems="flex-start"
@@ -58,7 +58,7 @@ export const IconsSection = (props: IIconsSectionProps) => {
           variant="h2"
           gridArea="h2Mobile"
           sx={{
-            display: { xs: "block", sm: "none" },
+            display: { xs: "block", md: "none" },
           }}
         >
           Por que alugar um traje na Suits?
@@ -85,7 +85,7 @@ export const IconsSection = (props: IIconsSectionProps) => {
           sx={{
             gridArea: "cta",
 
-            display: { xs: "block", sm: "none" },
+            display: { xs: "block", md: "none" },
           }}
           variant="contained"
         >

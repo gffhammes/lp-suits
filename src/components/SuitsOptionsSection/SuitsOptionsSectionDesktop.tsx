@@ -3,6 +3,7 @@ import {
   Box,
   Collapse,
   Container,
+  Divider,
   Slide,
   Stack,
   Typography,
@@ -42,91 +43,97 @@ export const SuitsOptionsSectionDesktop = ({
                 index !== selectedOption - 1;
 
               return (
-                <Box
-                  key={option.label}
-                  sx={{
-                    backgroundColor: isSelectedOption
-                      ? "secondary.main"
-                      : "transparent",
+                <Box key={option.label}>
+                  <Box
+                    sx={{
+                      backgroundColor: isSelectedOption
+                        ? "secondary.main"
+                        : "transparent",
 
-                    transition: ".3s ease all",
-                    px: 2,
-                    py: 2,
-                    borderBottom: showBorder
-                      ? "1px solid rgba(255,255,255,0.5)"
-                      : "none",
-                    cursor: "pointer",
+                      transition: ".3s ease all",
+                      px: 2,
+                      py: 2,
+                      cursor: "pointer",
 
-                    "&:hover": {
-                      "& .arrow": isSelectedOption
-                        ? {}
-                        : {
-                            opacity: 0.6,
-                            transform: "translateX(5px)",
-                          },
-                    },
-                  }}
-                  onClick={() => setSelectedOption(index)}
-                >
-                  <Stack>
-                    <Stack direction="row" alignItems="center" gap={2}>
-                      <Typography
-                        variant="h3"
-                        fontSize={isSelectedOption ? undefined : 20}
-                        sx={{
-                          transition: ".3s ease all",
-                        }}
-                      >
-                        {option.label}
-                      </Typography>
-
-                      <EastIcon
-                        fontSize="small"
-                        className="arrow"
-                        color="primary"
-                        sx={{
-                          opacity: 0,
-                          transition: ".3s ease all",
-                          transform: "translateX(-5px)",
-                        }}
-                      />
-                    </Stack>
-
-                    <Collapse in={isSelectedOption}>
-                      <Stack
-                        sx={{
-                          pt: 1,
-                        }}
-                        gap={3}
-                      >
-                        <Stack gap={1}>
-                          <Typography
-                            sx={{
-                              display: "-webkit-box",
-                              WebkitLineClamp: "3",
-                              WebkitBoxOrient: "vertical",
-                              overflow: "hidden",
-                            }}
-                          >
-                            {option.description}
-                          </Typography>
-
-                          <Typography color="white" sx={{ opacity: 0.2 }}>
-                            Ver mais
-                          </Typography>
-                        </Stack>
-
+                      "&:hover": {
+                        "& .arrow": isSelectedOption
+                          ? {}
+                          : {
+                              opacity: 0.6,
+                              transform: "translateX(5px)",
+                            },
+                      },
+                    }}
+                    onClick={() => setSelectedOption(index)}
+                  >
+                    <Stack>
+                      <Stack direction="row" alignItems="center" gap={2}>
                         <Typography
-                          variant="h4"
+                          variant="h3"
+                          fontSize={isSelectedOption ? undefined : 20}
                           sx={{
-                            textDecoration: "underline",
+                            transition: ".3s ease all",
                           }}
                         >
-                          QUERO PROVAR
+                          {option.label}
                         </Typography>
+
+                        <EastIcon
+                          fontSize="small"
+                          className="arrow"
+                          color="primary"
+                          sx={{
+                            opacity: 0,
+                            transition: ".3s ease all",
+                            transform: "translateX(-5px)",
+                          }}
+                        />
                       </Stack>
-                    </Collapse>
-                  </Stack>
+
+                      <Collapse in={isSelectedOption}>
+                        <Stack
+                          sx={{
+                            pt: 1,
+                          }}
+                          gap={3}
+                        >
+                          <Stack gap={1}>
+                            <Typography
+                              sx={{
+                                display: "-webkit-box",
+                                WebkitLineClamp: "3",
+                                WebkitBoxOrient: "vertical",
+                                overflow: "hidden",
+                              }}
+                            >
+                              {option.description}
+                            </Typography>
+
+                            <Typography color="white" sx={{ opacity: 0.2 }}>
+                              Ver mais
+                            </Typography>
+                          </Stack>
+
+                          <Typography
+                            variant="h4"
+                            sx={{
+                              textDecoration: "underline",
+                            }}
+                          >
+                            QUERO PROVAR
+                          </Typography>
+                        </Stack>
+                      </Collapse>
+                    </Stack>
+                  </Box>
+
+                  <Divider
+                    sx={{
+                      borderColor: showBorder
+                        ? "rgba(255,255,255,0.3)"
+                        : "transparent",
+                    }}
+                  />
                 </Box>
               );
             })}

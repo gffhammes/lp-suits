@@ -13,16 +13,30 @@ export const ReviewsCarousel = ({ reviews }: IReviewsCarouselProps) => {
 
   return (
     <Box className="embla" ref={emblaRef} sx={{ overflow: "hidden" }}>
-      <Box className="embla__container" sx={{ display: "flex" }}>
+      <Box
+        className="embla__container"
+        sx={{ display: "flex" }}
+        gap={{ xs: 0, md: 4 }}
+      >
         {reviews.map((review, index) => {
+          const isFirstSlide = index === 0;
           const isLastSlide = index === reviews.length - 1;
 
           return (
             <Box
+              height="100%"
               sx={{
-                flex: "0 0 16rem",
-                pl: 2,
-                pr: isLastSlide ? 2 : 0,
+                flex: {
+                  xs: "0 0 16rem",
+                  sm: "0 0 20rem",
+                  md: "0 0 calc(25% - ((2rem / 4) * 3))",
+                },
+                pl: {
+                  xs: 2,
+                  sm: 3,
+                  md: 0,
+                },
+                pr: { xs: isLastSlide ? 2 : 0, md: 0 },
               }}
               key={review.name}
             >

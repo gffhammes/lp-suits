@@ -6,15 +6,24 @@ export interface IReviewsSectionProps {}
 export const ReviewsSection = (props: IReviewsSectionProps) => {
   return (
     <Box sx={{ backgroundColor: "secondary.main", py: 10, pb: 20 }}>
-      <Stack gap={4}>
-        <Container>
-          <Typography variant="h2">
-            Veja a experiência de nossos clientes
-          </Typography>
-        </Container>
+      <Container sx={{ p: { xs: 0, md: 4 }, m: { xs: 0, md: "auto" } }}>
+        <Stack gap={{ xs: 4, md: 8 }}>
+          <Container
+            sx={{ p: { xs: undefined, md: 0 }, m: { xs: undefined, md: 0 } }}
+          >
+            <Typography
+              variant="h2"
+              textAlign={{ xs: "left", md: "center" }}
+              maxWidth="21ch"
+              sx={{ m: { xs: 0, md: "auto" } }}
+            >
+              Veja a experiência de nossos clientes
+            </Typography>
+          </Container>
 
-        <ReviewsCarousel reviews={reviews} />
-      </Stack>
+          <ReviewsCarousel reviews={reviews} />
+        </Stack>
+      </Container>
     </Box>
   );
 };
