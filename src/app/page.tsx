@@ -30,7 +30,7 @@ export default function Home() {
           <Divider color="white" />
         </Container>
 
-        <Stack>
+        <Stack gap={{ xs: 0, md: 20 }}>
           <ReviewsSection />
 
           <BigCTASection />

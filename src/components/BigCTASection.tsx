@@ -1,4 +1,4 @@
-import { Box, Container, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import image2 from "../../public/images/suits2.png";
 
@@ -6,54 +6,73 @@ export interface IBigCTASectionProps {}
 
 export const BigCTASection = (props: IBigCTASectionProps) => {
   return (
-    <Stack
-      direction="row"
+    <Box
       sx={{
         backgroundColor: "white",
+        width: "100%",
+        maxWidth: { xs: undefined, md: 600 },
+        mx: "auto",
       }}
     >
-      <Stack sx={{ p: 3, pr: 0, flex: "0 0 16rem" }} gap={1}>
-        <Typography color="secondary" variant="h3">
-          Quer se vestir com muita elegância?
-        </Typography>
-
-        <Typography color="secondary.light">
-          <strong>Clique aqui</strong> para agendar uma visita e{" "}
-          <strong>ganhe uma consultoria de estilo</strong> para seu evento
-        </Typography>
-      </Stack>
-
-      <Box sx={{ flex: "1 1 100%", position: "relative" }}>
-        <Box
-          sx={{
-            position: "absolute",
-            width: "100%",
-            bottom: 0,
-          }}
+      <Stack
+        direction="row"
+        sx={{
+          maxWidth: { xs: undefined, sm: 500, md: 600 },
+          mx: "auto",
+        }}
+      >
+        <Stack
+          sx={{ p: 3, pr: 0, flex: { xs: "0 0 16rem", md: "0 0 24rem" } }}
+          gap={1}
         >
+          <Typography
+            color="secondary"
+            variant="h3"
+            fontSize={{ xs: 24, md: 32 }}
+          >
+            Quer se vestir com muita elegância?
+          </Typography>
+
+          <Typography color="secondary" maxWidth="32ch">
+            <strong>Clique aqui</strong> para agendar uma visita e{" "}
+            <strong>ganhe uma consultoria de estilo</strong> para seu evento
+          </Typography>
+        </Stack>
+
+        <Box sx={{ flex: "1 1 100%", position: "relative" }}>
           <Box
             sx={{
-              position: "relative",
+              position: "absolute",
               width: "100%",
-              height: "15rem",
+              bottom: 0,
+              overflow: "hidden",
             }}
           >
-            <Image
-              src={image2.src}
-              alt="Terno"
-              fill
-              style={{
-                position: "absolute",
-                filter: "drop-shadow(5px 5px 5px #222)",
-                right: 0,
-                bottom: 0,
-                objectFit: "none",
-                objectPosition: "27% 12%",
+            <Box
+              sx={{
+                position: "relative",
+                width: { xs: "25rem", md: "30rem" },
+                height: { xs: "28rem", md: "38rem" },
               }}
-            />
+            >
+              <Box
+                component={Image}
+                src={image2.src}
+                alt="Terno"
+                fill
+                sx={{
+                  position: "absolute",
+                  filter: "drop-shadow(5px 5px 5px #222)",
+                  right: 0,
+                  bottom: 0,
+                  objectFit: "contain",
+                  transform: "translate(-24%, 40%)",
+                }}
+              />
+            </Box>
           </Box>
         </Box>
-      </Box>
-    </Stack>
+      </Stack>
+    </Box>
   );
 };
