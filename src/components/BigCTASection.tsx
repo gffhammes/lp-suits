@@ -10,19 +10,23 @@ export const BigCTASection = (props: IBigCTASectionProps) => {
       sx={{
         backgroundColor: "white",
         width: "100%",
-        maxWidth: { xs: undefined, md: 600 },
+        maxWidth: { xs: undefined, md: 900 - 24 - 24 },
         mx: "auto",
       }}
     >
       <Stack
         direction="row"
         sx={{
-          maxWidth: { xs: undefined, sm: 500, md: 600 },
+          maxWidth: { xs: undefined, sm: 500, md: 700 },
           mx: "auto",
         }}
       >
         <Stack
-          sx={{ p: 3, pr: 0, flex: { xs: "0 0 16rem", md: "0 0 24rem" } }}
+          sx={{
+            p: { xs: 3, md: 6 },
+            pr: 0,
+            flex: { xs: "0 0 16rem", md: "0 0 24rem" },
+          }}
           gap={1}
         >
           <Typography
