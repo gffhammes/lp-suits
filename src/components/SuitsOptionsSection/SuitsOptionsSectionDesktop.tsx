@@ -74,6 +74,11 @@ export const SuitsOptionsSectionDesktop = ({
                           sx={{
                             transition: ".3s ease all",
                           }}
+                          color={
+                            isSelectedOption
+                              ? "rgba(255,255,255,1)"
+                              : "rgba(255,255,255,.3)"
+                          }
                         >
                           {option.label}
                         </Typography>
