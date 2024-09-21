@@ -1,14 +1,7 @@
 "use client";
 
-import {
-  Box,
-  Container,
-  Slide,
-  Typography,
-  useScrollTrigger,
-} from "@mui/material";
-import logo from "../../public/images/logo suits branca 01 3.png";
-import Image from "next/image";
+import { Box, Container, Slide, useScrollTrigger } from "@mui/material";
+import { Logo } from "./Logo";
 
 export interface IHeaderProps {}
 
@@ -34,13 +27,7 @@ export const Header = (props: IHeaderProps) => {
         }}
       >
         <Container>
-          <Image
-            src={logo.src}
-            height={40}
-            width={40}
-            alt="Logo Suits"
-            style={{ objectFit: "contain", transition: ".3s ease all" }}
-          />
+          <Logo height={40} width={40} />
         </Container>
       </Box>
     </Slide>

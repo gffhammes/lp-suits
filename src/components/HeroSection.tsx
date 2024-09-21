@@ -9,7 +9,7 @@ import {
 import image from "../../public/images/bride-adjusting-her-boyfriend-s-bow-tie.webp";
 import Image from "next/image";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import logo from "../../public/images/logo suits branca 01 3.png";
+import { Logo } from "./Logo";
 
 export interface IHeroSectionProps {}
 
@@ -48,13 +48,7 @@ export const HeroSection = (props: IHeroSectionProps) => {
           sx={{ position: "relative", pt: "clamp(50px, 10vh, 500px)" }}
         >
           <Stack gap={6} alignItems="flex-start">
-            <Image
-              src={logo.src}
-              height={100}
-              width={100}
-              alt="Logo Suits"
-              style={{ objectFit: "contain" }}
-            />
+            <Logo height={100} width={100} />
 
             <Stack gap={2} alignItems="flex-start">
               <Typography variant="h1" maxWidth="17ch">

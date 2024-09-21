@@ -7,6 +7,7 @@ import { ReviewsSection } from "@/components/ReviewsSection/ReviewsSection";
 import { BigCTASection } from "@/components/BigCTASection";
 import { FinalSection } from "@/components/FinalSection/FinalSection";
 import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -38,7 +39,7 @@ export default function Home() {
 
         <FinalSection />
 
-        {/* <Footer /> */}
+        <Footer />
       </Stack>
     </main>
   );
