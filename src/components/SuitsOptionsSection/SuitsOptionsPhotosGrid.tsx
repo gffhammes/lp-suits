@@ -21,17 +21,38 @@ export const SuitsOptionsPhotosGrid = ({
       gridTemplateRows="1fr 1fr"
       gap={2}
     >
-      <Box sx={{ position: "relative", gridArea: "image1" }}>
-        <Image src={photos[0]} alt="Suits Trajes" fill objectFit="cover" />
-      </Box>
+      <Box
+        sx={{
+          position: "relative",
+          gridArea: "image1",
+          backgroundImage: `url('${photos[0]}')`,
+          transition: ".3s ease all",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
 
-      <Box sx={{ position: "relative", gridArea: "image2" }}>
-        <Image src={photos[1]} alt="Suits Trajes" fill objectFit="cover" />
-      </Box>
+      <Box
+        sx={{
+          position: "relative",
+          gridArea: "image2",
+          backgroundImage: `url('${photos[1]}')`,
+          transition: ".3s ease all",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
 
-      <Box sx={{ position: "relative", gridArea: "image3" }}>
-        <Image src={photos[2]} alt="Suits Trajes" fill objectFit="cover" />
-      </Box>
+      <Box
+        sx={{
+          position: "relative",
+          gridArea: "image3",
+          backgroundImage: `url('${photos[2]}')`,
+          transition: ".3s ease all",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
     </Box>
   );
 };

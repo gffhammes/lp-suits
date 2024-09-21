@@ -65,6 +65,7 @@ export const SuitsOptionsSelector = ({
                   borderColor: isSelectedOption
                     ? "primary.main"
                     : "rgba(255,255,255,.3)",
+                  cursor: "pointer",
                 }}
               >
                 <Typography

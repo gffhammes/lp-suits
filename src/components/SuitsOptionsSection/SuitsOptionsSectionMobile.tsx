@@ -13,7 +13,12 @@ export const SuitsOptionsSectionMobile = ({
     <Box>
       <Stack gap={4}>
         <Container>
-          <Typography variant="h2" textAlign="center" maxWidth="20ch">
+          <Typography
+            variant="h2"
+            textAlign="center"
+            maxWidth="20ch"
+            sx={{ mx: "auto" }}
+          >
             Veja os melhores trajes para cada evento:
           </Typography>
         </Container>
