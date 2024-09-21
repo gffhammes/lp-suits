@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export interface IDiamondPhotoProps {
   src: string;
-  size: number;
+  size: any;
 }
 
 export const DiamondPhoto = ({ src, size }: IDiamondPhotoProps) => {

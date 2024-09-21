@@ -1,13 +1,27 @@
+"use client";
+
 import { Box } from "@mui/material";
 import { DiamondPhoto } from "./DiamondPhoto";
 import foto1 from "../../../public/images/2H0A9578.jpeg";
 import foto2 from "../../../public/images/2H0A9848.jpeg";
 import foto3 from "../../../public/images/2H0A9939.jpeg";
+import { useBreakpoints } from "@/hooks/useBreakpoints";
+import { useMemo } from "react";
 
 export interface IDiamondPhotosProps {}
 
 export const DiamondPhotos = (props: IDiamondPhotosProps) => {
-  const diamondSize = 300;
+  const { sm, md, lg, xl } = useBreakpoints();
+
+  const diamondSize = useMemo(() => {
+    if (sm) return 500;
+    if (md) return 500;
+    if (lg) return 500;
+    if (xl) return 500;
+
+    return 300;
+  }, [sm, md, lg, xl]);
+
   const diamondsGap = ".5rem";
 
   return (

@@ -20,7 +20,9 @@ export const IconsSection = (props: IIconsSectionProps) => {
       <Box
         display="grid"
         gap={8}
+        justifyContent="center"
         justifyItems="flex-start"
+        gridTemplateColumns={{ xs: "1fr", sm: "400px 400px" }}
         gridTemplateAreas={{
           xs: `
             'h2Mobile'
@@ -37,13 +39,13 @@ export const IconsSection = (props: IIconsSectionProps) => {
           gridArea="h2Desktop"
           sx={{
             position: "sticky",
-            top: 40,
+            top: 200,
             display: { xs: "none", sm: "flex" },
           }}
           gap={4}
           alignItems="flex-start"
         >
-          <Typography variant="h2">
+          <Typography variant="h2" maxWidth="15ch">
             Por que alugar um traje na Suits?
           </Typography>
 

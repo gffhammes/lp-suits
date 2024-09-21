@@ -1,12 +1,11 @@
 import { DiamondPhotosSection } from "@/components/DiamondPhotosSection/DiamondPhotosSection";
 import { HeroSection } from "@/components/HeroSection";
-import { Container, Divider, IconButton, Stack } from "@mui/material";
+import { Container, Divider, Stack } from "@mui/material";
 import { IconsSection } from "@/components/IconsSection";
 import { SuitsOptionsSection } from "@/components/SuitsOptionsSection/SuitsOptionsSection";
 import { ReviewsSection } from "@/components/ReviewsSection/ReviewsSection";
 import { BigCTASection } from "@/components/BigCTASection";
 import { FinalSection } from "@/components/FinalSection";
-import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 
 export default function Home() {
@@ -14,7 +13,7 @@ export default function Home() {
     <main>
       <Header />
 
-      <Stack gap={14}>
+      <Stack gap={20}>
         <HeroSection />
 
         <DiamondPhotosSection />

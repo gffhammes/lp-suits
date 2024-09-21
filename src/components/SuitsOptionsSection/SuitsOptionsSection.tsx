@@ -1,26 +1,22 @@
+"use client";
+
 import { Box, Container, Stack, Typography } from "@mui/material";
-import { SuitsOptionsSelector } from "./SuitsOptionsSelector";
 import { SuitsOptions } from "./SuitsOptions";
 import foto1 from "../../../public/images/2H0A9578.jpeg";
 import foto2 from "../../../public/images/2H0A9848.jpeg";
 import foto3 from "../../../public/images/2H0A9939.jpeg";
+import { useBreakpoints } from "@/hooks/useBreakpoints";
+import { SuitsOptionsSectionDesktop } from "./SuitsOptionsSectionDesktop";
+import { SuitsOptionsSectionMobile } from "./SuitsOptionsSectionMobile";
 
 export interface ISuitsOptionsSectionProps {}
 
 export const SuitsOptionsSection = (props: ISuitsOptionsSectionProps) => {
-  return (
-    <Box>
-      <Stack gap={4}>
-        <Container>
-          <Typography variant="h2" textAlign="center" maxWidth="20ch">
-            Veja os melhores trajes para cada evento:
-          </Typography>
-        </Container>
+  const { md } = useBreakpoints();
 
-        <SuitsOptions suitsOptions={suitsOptions} />
-      </Stack>
-    </Box>
-  );
+  if (md) return <SuitsOptionsSectionDesktop suitsOptions={suitsOptions} />;
+
+  return <SuitsOptionsSectionMobile suitsOptions={suitsOptions} />;
 };
 
 export interface ISuitsOption {

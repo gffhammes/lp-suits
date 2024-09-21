@@ -21,7 +21,7 @@ const theme = createTheme({
     allVariants: { color: "white" },
     h1: {
       fontFamily: taviraj.style.fontFamily,
-      fontSize: "clamp(32px, 3vh, 48px)",
+      fontSize: "clamp(32px, 5.5vh, 48px)",
       fontWeight: 400,
     },
     h2: {
@@ -32,6 +32,11 @@ const theme = createTheme({
     h3: {
       fontFamily: taviraj.style.fontFamily,
       fontSize: 24,
+      fontWeight: 400,
+    },
+    h4: {
+      fontFamily: taviraj.style.fontFamily,
+      fontSize: 16,
       fontWeight: 400,
     },
     body1: {
@@ -45,12 +50,13 @@ const theme = createTheme({
   },
   palette: {
     primary: { main: "#ffffff" },
-    secondary: { main: "#311120", light: "#85757c" },
+    secondary: { main: "#651730", light: "#85757c" },
   },
   components: {
     MuiButton: {
       defaultProps: {
         sx: { borderRadius: 0 },
+        color: "secondary",
       },
     },
   },
