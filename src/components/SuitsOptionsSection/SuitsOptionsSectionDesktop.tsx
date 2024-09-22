@@ -12,6 +12,7 @@ import { ISuitsOption } from "./SuitsOptionsSection";
 import { useState } from "react";
 import { SuitsOptionsPhotosGrid } from "./SuitsOptionsPhotosGrid";
 import EastIcon from "@mui/icons-material/East";
+import { generateWhatsAppLink } from "@/utils";
 
 export interface ISuitsOptionsSectionDesktopProps {
   suitsOptions: ISuitsOption[];
@@ -59,7 +60,7 @@ export const SuitsOptionsSectionDesktop = ({
                         "& .arrow": isSelectedOption
                           ? {}
                           : {
-                              opacity: 0.6,
+                              opacity: 0.3,
                               transform: "translateX(5px)",
                             },
                       },
@@ -101,6 +102,7 @@ export const SuitsOptionsSectionDesktop = ({
                             pt: 1,
                           }}
                           gap={3}
+                          alignItems="flex-start"
                         >
                           <Stack gap={1}>
                             <Typography
@@ -119,14 +121,23 @@ export const SuitsOptionsSectionDesktop = ({
                             </Typography>
                           </Stack>
 
-                          <Typography
-                            variant="h4"
-                            sx={{
-                              textDecoration: "underline",
-                            }}
+                          <a
+                            href={generateWhatsAppLink(
+                              `Olá, vim pelo site e gostaria de alugar um traje elegante para o evento ${option.label}!`
+                            )}
+                            target="_blank"
                           >
-                            QUERO PROVAR
-                          </Typography>
+                            <Typography
+                              variant="h4"
+                              sx={{
+                                "&:hover": {
+                                  textDecoration: "underline",
+                                },
+                              }}
+                            >
+                              QUERO PROVAR
+                            </Typography>
+                          </a>
                         </Stack>
                       </Collapse>
                     </Stack>

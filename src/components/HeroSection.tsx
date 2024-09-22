@@ -8,8 +8,9 @@ import {
 } from "@mui/material";
 import image from "../../public/images/bride-adjusting-her-boyfriend-s-bow-tie.webp";
 import Image from "next/image";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { Logo } from "./Logo";
+import { getDefaultWhatsappLink } from "@/utils";
+import { HeroSectionArrowButton } from "./HeroSectionArrowButton";
 
 export interface IHeroSectionProps {}
 
@@ -62,14 +63,19 @@ export const HeroSection = (props: IHeroSectionProps) => {
               </Typography>
             </Stack>
 
-            <Button variant="contained">Alugar traje</Button>
+            <Button
+              variant="contained"
+              LinkComponent={"a"}
+              href={getDefaultWhatsappLink()}
+              target="_blank"
+            >
+              Alugar traje
+            </Button>
           </Stack>
         </Container>
 
         <Stack alignItems="center" justifyContent="center">
-          <IconButton color="primary" sx={{ fontSize: 48 }}>
-            <KeyboardArrowDownIcon fontSize="inherit" color="primary" />
-          </IconButton>
+          <HeroSectionArrowButton />
         </Stack>
       </Stack>
     </Box>

@@ -1,5 +1,6 @@
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import { DiamondPhotos } from "./DiamondPhotos";
+import { getDefaultWhatsappLink } from "@/utils";
 
 export interface IDiamondPhotosSectionProps {}
 
@@ -17,7 +18,14 @@ export const DiamondPhotosSection = (props: IDiamondPhotosSectionProps) => {
             disponíveis no mercado.
           </Typography>
 
-          <Button variant="contained">Agendar visita</Button>
+          <Button
+            variant="contained"
+            LinkComponent={"a"}
+            href={getDefaultWhatsappLink()}
+            target="_blank"
+          >
+            Agendar visita
+          </Button>
         </Stack>
       </Container>
 

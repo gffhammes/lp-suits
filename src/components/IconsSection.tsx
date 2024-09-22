@@ -11,6 +11,7 @@ import CheckroomIcon from "@mui/icons-material/Checkroom";
 import WorkspacePremiumOutlinedIcon from "@mui/icons-material/WorkspacePremiumOutlined";
 import FullscreenExitIcon from "@mui/icons-material/FullscreenExit";
 import StyleOutlinedIcon from "@mui/icons-material/StyleOutlined";
+import { getDefaultWhatsappLink } from "@/utils";
 
 export interface IIconsSectionProps {}
 
@@ -39,7 +40,7 @@ export const IconsSection = (props: IIconsSectionProps) => {
           gridArea="h2Desktop"
           sx={{
             position: "sticky",
-            top: 200,
+            top: "40%",
             display: { xs: "none", md: "flex" },
           }}
           gap={4}
@@ -49,7 +50,13 @@ export const IconsSection = (props: IIconsSectionProps) => {
             Por que alugar um traje na Suits?
           </Typography>
 
-          <Button sx={{ position: "sticky", top: 0 }} variant="contained">
+          <Button
+            sx={{ position: "sticky", top: 0 }}
+            variant="contained"
+            LinkComponent={"a"}
+            href={getDefaultWhatsappLink()}
+            target="_blank"
+          >
             Agendar visita
           </Button>
         </Stack>
@@ -88,6 +95,9 @@ export const IconsSection = (props: IIconsSectionProps) => {
             display: { xs: "block", md: "none" },
           }}
           variant="contained"
+          LinkComponent={"a"}
+          href={getDefaultWhatsappLink()}
+          target="_blank"
         >
           Agendar visita
         </Button>

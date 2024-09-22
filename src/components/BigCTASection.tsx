@@ -1,17 +1,26 @@
 import { Box, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import image2 from "../../public/images/suits2.png";
+import { getDefaultWhatsappLink } from "@/utils";
 
 export interface IBigCTASectionProps {}
 
 export const BigCTASection = (props: IBigCTASectionProps) => {
   return (
     <Box
+      component="a"
+      href={getDefaultWhatsappLink()}
+      target="_blank"
       sx={{
         backgroundColor: "white",
         width: "100%",
         maxWidth: { xs: undefined, md: 900 - 24 - 24 },
         mx: "auto",
+        transition: ".3s ease all",
+
+        "&:hover": {
+          boxShadow: "0 0 40px white",
+        },
       }}
     >
       <Stack

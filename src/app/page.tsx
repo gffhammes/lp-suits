@@ -14,7 +14,7 @@ export default function Home() {
     <main>
       <Header />
 
-      <Stack gap={20}>
+      <Stack gap={{ xs: 20, md: 30 }}>
         <HeroSection />
 
         <DiamondPhotosSection />
@@ -25,11 +25,11 @@ export default function Home() {
 
         <IconsSection />
 
-        <SuitsOptionsSection />
-
         <Container maxWidth={false} sx={{ maxWidth: "300px" }}>
           <Divider color="white" />
         </Container>
+
+        <SuitsOptionsSection />
 
         <Stack gap={{ xs: 0, md: 20 }}>
           <ReviewsSection />
