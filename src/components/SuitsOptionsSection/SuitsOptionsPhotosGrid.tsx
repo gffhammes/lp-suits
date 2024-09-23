@@ -26,7 +26,7 @@ export const SuitsOptionsPhotosGrid = ({
           position: "relative",
           gridArea: "image1",
           backgroundImage: `url('${photos[0]}')`,
-          transition: ".3s ease all",
+          // transition: ".3s ease all",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -37,7 +37,7 @@ export const SuitsOptionsPhotosGrid = ({
           position: "relative",
           gridArea: "image2",
           backgroundImage: `url('${photos[1]}')`,
-          transition: ".3s ease all",
+          // transition: ".3s ease all",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -48,7 +48,7 @@ export const SuitsOptionsPhotosGrid = ({
           position: "relative",
           gridArea: "image3",
           backgroundImage: `url('${photos[2]}')`,
-          transition: ".3s ease all",
+          // transition: ".3s ease all",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

@@ -59,6 +59,9 @@ export const BigCTASection = (props: IBigCTASectionProps) => {
               width: "100%",
               bottom: 0,
               overflow: "hidden",
+              height: { xs: "15rem", md: "22rem" },
+              display: "grid",
+              alignContent: "end",
             }}
           >
             <Box

@@ -3,7 +3,9 @@ import { Address } from "./Address";
 import { Map } from "./Map";
 import { OtherServices } from "./OtherServices";
 import Image from "next/image";
-import foto1 from "../../../public/images/2H0A9578.jpeg";
+import foto1 from "../../../public/images/Rectangle 16.png";
+import foto2 from "../../../public/images/Rectangle 17.png";
+import foto3 from "../../../public/images/home-4-p-2000.jpg";
 
 export interface IFinalSectionDesktopProps {}
 
@@ -68,7 +70,7 @@ export const FinalSectionDesktop = (props: IFinalSectionDesktopProps) => {
             position: "relative",
           }}
         >
-          <Image fill src={foto1.src} alt="Suits Trajes" objectFit="cover" />
+          <Image fill src={foto2.src} alt="Suits Trajes" objectFit="cover" />
         </Box>
 
         <Box
@@ -77,7 +79,7 @@ export const FinalSectionDesktop = (props: IFinalSectionDesktopProps) => {
             position: "relative",
           }}
         >
-          <Image fill src={foto1.src} alt="Suits Trajes" objectFit="cover" />
+          <Image fill src={foto3.src} alt="Suits Trajes" objectFit="cover" />
         </Box>
       </Box>
     </Container>
