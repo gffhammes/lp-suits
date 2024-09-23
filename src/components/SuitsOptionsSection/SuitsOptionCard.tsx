@@ -30,28 +30,15 @@ export const SuitsOptionCard = ({ option }: ISuitsOptionCardProps) => {
         sx={{
           backgroundColor: "secondary.main",
           px: 2,
-          py: 3,
+          py: 2,
           height: "100%",
           overflow: "hidden",
         }}
       >
         <Stack gap={1}>
-          <Typography variant="h3">{option.label}</Typography>
+          <Typography variant="h4">{option.label}</Typography>
 
-          <Typography
-            sx={{
-              display: "-webkit-box",
-              WebkitLineClamp: "5",
-              WebkitBoxOrient: "vertical",
-              overflow: "hidden",
-            }}
-          >
-            {option.description}
-          </Typography>
-
-          <Typography color="white" sx={{ opacity: 0.2 }}>
-            Ver mais
-          </Typography>
+          <Typography>{option.description}</Typography>
         </Stack>
       </Box>
     </Stack>

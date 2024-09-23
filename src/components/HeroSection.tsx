@@ -49,7 +49,7 @@ export const HeroSection = (props: IHeroSectionProps) => {
           sx={{ position: "relative", pt: "clamp(50px, 10vh, 500px)" }}
         >
           <Stack gap={6} alignItems="flex-start">
-            <Logo height={100} width={100} />
+            <Logo height={{ xs: 70, md: 100 }} width={{ xs: 70, md: 100 }} />
 
             <Stack gap={2} alignItems="flex-start">
               <Typography variant="h1" maxWidth="17ch">
@@ -68,6 +68,7 @@ export const HeroSection = (props: IHeroSectionProps) => {
               LinkComponent={"a"}
               href={getDefaultWhatsappLink()}
               target="_blank"
+              size="large"
             >
               Alugar traje
             </Button>

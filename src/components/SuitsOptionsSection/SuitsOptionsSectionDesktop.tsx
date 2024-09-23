@@ -115,10 +115,6 @@ export const SuitsOptionsSectionDesktop = ({
                             >
                               {option.description}
                             </Typography>
-
-                            <Typography color="white" sx={{ opacity: 0.2 }}>
-                              Ver mais
-                            </Typography>
                           </Stack>
 
                           <a

@@ -23,6 +23,9 @@ const theme = createTheme({
       fontFamily: taviraj.style.fontFamily,
       fontSize: "clamp(32px, 5.5vh, 48px)",
       fontWeight: 400,
+      "@media (min-width:900px)": {
+        fontSize: "64px",
+      },
     },
     h2: {
       fontFamily: taviraj.style.fontFamily,

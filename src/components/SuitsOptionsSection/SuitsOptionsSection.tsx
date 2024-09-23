@@ -48,7 +48,7 @@ const suitsOptions: ISuitsOption[] = [
   {
     label: "Casamento Noturno",
     description:
-      "Para um casamento à noite, o mais indicado é um terno formal em tons escuros, como preto, azul-marinho ou grafite. O estilo clássico ou slim é ideal, acompanhado de uma gravata em tons sóbrios e sapatos de couro polido. Um smoking também é uma escolha elegante para eventos mais formais.",
+      "Para casamentos noturnos, opte por um terno escuro e formal, como preto ou azul-marinho, com gravata discreta e sapatos polidos.",
     photos: [
       casamento_noturno1.src,
       casamento_noturno2.src,
@@ -58,7 +58,7 @@ const suitsOptions: ISuitsOption[] = [
   {
     label: "Casamento Diurno",
     description:
-      "Em um casamento durante o dia, cores mais claras são bem-vindas, como bege, cinza claro ou azul claro. Trajes em linho ou algodão garantem conforto e elegância. Gravatas em tons pastéis e sapatos marrons ou de camurça complementam o visual.",
+      "Casamentos diurnos pedem ternos claros, como bege ou cinza. Tecidos leves, gravatas suaves e sapatos marrons completam o look.",
     photos: [
       casamento_diurno1.src,
       casamento_diurno2.src,
@@ -68,7 +68,7 @@ const suitsOptions: ISuitsOption[] = [
   {
     label: "Formatura Noturna",
     description:
-      "Para uma formatura à noite, o look precisa equilibrar formalidade e estilo. Um terno slim preto ou azul-marinho, combinado com gravata ou laço em tons de prata, dourado ou vinho, confere sofisticação. Sapatos sociais em couro são indispensáveis.",
+      "Em formaturas noturnas, prefira um terno preto ou azul escuro. Gravatas elegantes e sapatos de couro garantem sofisticação.",
     photos: [
       formatura_noturna1.src,
       formatura_noturna2.src,
@@ -78,7 +78,7 @@ const suitsOptions: ISuitsOption[] = [
   {
     label: "Evento Corporativo",
     description:
-      "Em eventos corporativos, a discrição é essencial. Um terno em tons de cinza, azul ou preto, com camisa social branca ou azul-clara, transmite profissionalismo. Gravatas discretas e sapatos sociais pretos ou marrons completam o visual.",
+      "Para eventos corporativos, use um terno em tons de cinza ou azul, com camisa clara e gravata discreta para um visual profissional.",
     photos: [
       evento_corporativo1.src,
       evento_corporativo2.src,
@@ -88,13 +88,13 @@ const suitsOptions: ISuitsOption[] = [
   {
     label: "Festa de Gala",
     description:
-      "Para festas de gala, um smoking preto ou azul meia-noite é a escolha mais adequada. O uso de laço preto, camisa branca com botões discretos e sapatos de verniz traz um ar de luxo e sofisticação.",
+      "Numa festa de gala, escolha um smoking preto clássico, com laço, camisa branca e sapatos de verniz para máxima elegância.",
     photos: [festa_de_gala1.src, festa_de_gala2.src, festa_de_gala3.src],
   },
   {
     label: "Coquetel",
     description:
-      "Em coquetéis, o estilo pode ser um pouco mais descontraído, mas ainda elegante. Um blazer combinado com calça social, em tons como cinza ou azul, com camisa social sem gravata, é moderno e adequado. Sapatos marrons ou mocassins completam o visual. s",
+      "Coquetéis pedem um look elegante e descontraído. Um blazer, calça social e sapatos marrons garantem estilo e sofisticação.",
     photos: [coquetel1.src, coquetel2.src, coquetel3.src],
   },
 ];
