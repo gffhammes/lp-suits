@@ -1,12 +1,14 @@
 import { Box } from "@mui/material";
-import Image from "next/image";
+import { Animate } from "../Animate";
+import { ISuitsOption } from "./SuitsOptionsSection";
+import { AnimatePresence } from "framer-motion";
 
 export interface ISuitsOptionsPhotosGridProps {
-  photos: string[];
+  selectedOption: ISuitsOption;
 }
 
 export const SuitsOptionsPhotosGrid = ({
-  photos,
+  selectedOption,
 }: ISuitsOptionsPhotosGridProps) => {
   return (
     <Box
@@ -21,38 +23,86 @@ export const SuitsOptionsPhotosGrid = ({
       gridTemplateRows="1fr 1fr"
       gap={2}
     >
-      <Box
-        sx={{
-          position: "relative",
+      <Animate
+        initial={{
+          opacity: 0,
+          x: "-30px",
+        }}
+        transition={{
+          duration: 0.7,
+          delay: 0.6,
+        }}
+        animate={{ opacity: 1, x: "-0px" }}
+        key={selectedOption.photos[0] + selectedOption.label}
+        style={{
           gridArea: "image1",
-          backgroundImage: `url('${photos[0]}')`,
-          // transition: ".3s ease all",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
         }}
-      />
+      >
+        <Box
+          sx={{
+            position: "relative",
+            backgroundImage: `url('${selectedOption.photos[0]}')`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            height: "100%",
+            width: "100%",
+          }}
+        />
+      </Animate>
 
-      <Box
-        sx={{
-          position: "relative",
+      <Animate
+        initial={{
+          opacity: 0,
+          x: "-30px",
+        }}
+        transition={{
+          duration: 0.7,
+          delay: 0.8,
+        }}
+        animate={{ opacity: 1, x: "-0px" }}
+        key={selectedOption.photos[1] + selectedOption.label}
+        style={{
           gridArea: "image2",
-          backgroundImage: `url('${photos[1]}')`,
-          // transition: ".3s ease all",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
         }}
-      />
+      >
+        <Box
+          sx={{
+            position: "relative",
+            backgroundImage: `url('${selectedOption.photos[1]}')`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            height: "100%",
+            width: "100%",
+          }}
+        />
+      </Animate>
 
-      <Box
-        sx={{
-          position: "relative",
-          gridArea: "image3",
-          backgroundImage: `url('${photos[2]}')`,
-          // transition: ".3s ease all",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+      <Animate
+        initial={{
+          opacity: 0,
+          x: "-30px",
         }}
-      />
+        transition={{
+          duration: 1,
+          delay: 0.2,
+        }}
+        animate={{ opacity: 1, x: "-0px" }}
+        key={selectedOption.photos[2] + selectedOption.label}
+        style={{
+          gridArea: "image3",
+        }}
+      >
+        <Box
+          sx={{
+            position: "relative",
+            backgroundImage: `url('${selectedOption.photos[2]}')`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            height: "100%",
+            width: "100%",
+          }}
+        />
+      </Animate>
     </Box>
   );
 };

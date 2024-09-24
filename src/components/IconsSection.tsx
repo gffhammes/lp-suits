@@ -12,6 +12,7 @@ import WorkspacePremiumOutlinedIcon from "@mui/icons-material/WorkspacePremiumOu
 import FullscreenExitIcon from "@mui/icons-material/FullscreenExit";
 import StyleOutlinedIcon from "@mui/icons-material/StyleOutlined";
 import { getDefaultWhatsappLink } from "@/utils";
+import { Animate } from "./Animate";
 
 export interface IIconsSectionProps {}
 
@@ -74,16 +75,26 @@ export const IconsSection = (props: IIconsSectionProps) => {
         <Stack gridArea="items" gap={8}>
           {iconsItems.map((iconItem) => {
             return (
-              <Stack key={iconItem.title} direction="row" gap={2}>
-                <Box sx={{ fontSize: 48 }}>
-                  <iconItem.Icon color="primary" fontSize="inherit" />
-                </Box>
+              <Animate
+                key={iconItem.title}
+                initial={{ opacity: 0, x: "-30px" }}
+                whileInView={{ opacity: 1, x: "0px" }}
+                viewport={{ once: true, margin: "-35%" }}
+                transition={{
+                  duration: 1,
+                }}
+              >
+                <Stack direction="row" gap={2}>
+                  <Box sx={{ fontSize: 48 }}>
+                    <iconItem.Icon color="primary" fontSize="inherit" />
+                  </Box>
 
-                <Stack gap={2}>
-                  <Typography variant="h3">{iconItem.title}</Typography>
-                  <Typography>{iconItem.description}</Typography>
+                  <Stack gap={2}>
+                    <Typography variant="h3">{iconItem.title}</Typography>
+                    <Typography>{iconItem.description}</Typography>
+                  </Stack>
                 </Stack>
-              </Stack>
+              </Animate>
             );
           })}
         </Stack>

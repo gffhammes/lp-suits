@@ -3,6 +3,7 @@
 import useEmblaCarousel from "embla-carousel-react";
 import { IReview } from "./ReviewsSection";
 import { Avatar, Box, Rating, Stack, Typography } from "@mui/material";
+import { Animate } from "../Animate";
 
 export interface IReviewsCarouselProps {
   reviews: IReview[];
@@ -19,11 +20,19 @@ export const ReviewsCarousel = ({ reviews }: IReviewsCarouselProps) => {
         gap={{ xs: 0, md: 4 }}
       >
         {reviews.map((review, index) => {
-          const isFirstSlide = index === 0;
           const isLastSlide = index === reviews.length - 1;
 
           return (
             <Box
+              component={Animate}
+              key={review.name}
+              initial={{ opacity: 0, y: "30px" }}
+              whileInView={{ opacity: 1, y: "0px" }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 1,
+                delay: (index + 1) * 0.6,
+              }}
               height="100%"
               sx={{
                 flex: {
@@ -38,7 +47,6 @@ export const ReviewsCarousel = ({ reviews }: IReviewsCarouselProps) => {
                 },
                 pr: { xs: isLastSlide ? 2 : 0, md: 0 },
               }}
-              key={review.name}
             >
               <Stack
                 gap={2}

@@ -153,7 +153,7 @@ export const SuitsOptionsSectionDesktop = ({
         </Stack>
 
         <Box flex="1 1 auto">
-          <SuitsOptionsPhotosGrid photos={selectedOptionObject.photos} />
+          <SuitsOptionsPhotosGrid selectedOption={selectedOptionObject} />
         </Box>
       </Stack>
     </Container>
