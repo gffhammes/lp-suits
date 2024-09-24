@@ -13,6 +13,7 @@ export const Map = ({ height, width }: IMapProps) => {
       allowFullScreen={false}
       loading="lazy"
       referrerPolicy="no-referrer-when-downgrade"
+      name="Suits Map Location"
     ></iframe>
   );
 };

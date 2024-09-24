@@ -36,7 +36,9 @@ export const SuitsOptionCard = ({ option }: ISuitsOptionCardProps) => {
         }}
       >
         <Stack gap={1}>
-          <Typography variant="h4">{option.label}</Typography>
+          <Typography variant="h3" fontSize={16}>
+            {option.label}
+          </Typography>
 
           <Typography>{option.description}</Typography>
         </Stack>

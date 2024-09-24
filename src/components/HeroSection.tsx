@@ -24,6 +24,7 @@ export const HeroSection = (props: IHeroSectionProps) => {
           fill
           objectFit="cover"
           objectPosition="bottom"
+          priority
         />
 
         <Box

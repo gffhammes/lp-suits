@@ -9,6 +9,7 @@ export const HeroSectionArrowButton = (props: IHeroSectionArrowButtonProps) => {
   return (
     <IconButton
       color="primary"
+      aria-label="See More"
       sx={{ fontSize: 48 }}
       onClick={() => {
         const windowHeight = window.innerHeight;

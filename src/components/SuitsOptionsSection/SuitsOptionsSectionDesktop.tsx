@@ -124,7 +124,9 @@ export const SuitsOptionsSectionDesktop = ({
                             target="_blank"
                           >
                             <Typography
-                              variant="h4"
+                              variant="h3"
+                              component="p"
+                              fontSize={16}
                               sx={{
                                 "&:hover": {
                                   textDecoration: "underline",

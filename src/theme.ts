@@ -37,11 +37,6 @@ const theme = createTheme({
       fontSize: 24,
       fontWeight: 400,
     },
-    h4: {
-      fontFamily: taviraj.style.fontFamily,
-      fontSize: 16,
-      fontWeight: 400,
-    },
     body1: {
       color: "rgba(255,255,255,.6)",
     },
