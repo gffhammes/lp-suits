@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import { Animate } from "../Animate";
 import { ISuitsOption } from "./SuitsOptionsSection";
-import { AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 export interface ISuitsOptionsPhotosGridProps {
   selectedOption: ISuitsOption;
@@ -36,17 +36,14 @@ export const SuitsOptionsPhotosGrid = ({
         key={selectedOption.photos[0] + selectedOption.label}
         style={{
           gridArea: "image1",
+          position: "relative",
         }}
       >
-        <Box
-          sx={{
-            position: "relative",
-            backgroundImage: `url('${selectedOption.photos[0]}')`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            height: "100%",
-            width: "100%",
-          }}
+        <Image
+          src={selectedOption.photos[0]}
+          alt="Suits Trajes"
+          fill
+          objectFit="cover"
         />
       </Animate>
 
@@ -63,17 +60,14 @@ export const SuitsOptionsPhotosGrid = ({
         key={selectedOption.photos[1] + selectedOption.label}
         style={{
           gridArea: "image2",
+          position: "relative",
         }}
       >
-        <Box
-          sx={{
-            position: "relative",
-            backgroundImage: `url('${selectedOption.photos[1]}')`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            height: "100%",
-            width: "100%",
-          }}
+        <Image
+          src={selectedOption.photos[1]}
+          alt="Suits Trajes"
+          fill
+          objectFit="cover"
         />
       </Animate>
 
@@ -90,17 +84,14 @@ export const SuitsOptionsPhotosGrid = ({
         key={selectedOption.photos[2] + selectedOption.label}
         style={{
           gridArea: "image3",
+          position: "relative",
         }}
       >
-        <Box
-          sx={{
-            position: "relative",
-            backgroundImage: `url('${selectedOption.photos[2]}')`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            height: "100%",
-            width: "100%",
-          }}
+        <Image
+          src={selectedOption.photos[2]}
+          alt="Suits Trajes"
+          fill
+          objectFit="cover"
         />
       </Animate>
     </Box>
