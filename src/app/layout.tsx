@@ -5,7 +5,7 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "../theme";
-import { GoogleTagManager } from "@next/third-parties/google";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   title: "Suits | Aluguel de Trajes Masculinos Elegantes",
@@ -27,6 +27,7 @@ export default function RootLayout({
       </body>
 
       <GoogleTagManager gtmId="GTM-MPDH9DPN" />
+      <GoogleAnalytics gaId="G-D8EH0M00KS" />
     </html>
   );
 }
