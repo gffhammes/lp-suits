@@ -1,3 +1,5 @@
+export const API_URL = "https://admin-lp-suits.onrender.com/api";
+
 export const getDefaultWhatsappLink = () => {
   return generateWhatsAppLink(
     "Olá, vim pelo site e gostaria de alugar um traje elegante!"
