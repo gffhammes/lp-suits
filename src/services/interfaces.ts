@@ -126,7 +126,7 @@ export interface ISecaoOpcoesTrajes {
   };
 }
 
-interface Avaliacao {
+export interface IAvaliacao {
   id: number;
   QuantidadeEstrelas: number;
   Texto: string;
@@ -140,7 +140,7 @@ export interface IAvaliacoes {
     Titulo: string;
     createdAt: string;
     updatedAt: string;
-    Avaliacoes: Avaliacao[];
+    Avaliacoes: IAvaliacao[];
   };
 }
 

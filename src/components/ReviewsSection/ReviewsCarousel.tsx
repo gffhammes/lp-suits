@@ -1,12 +1,12 @@
 "use client";
 
 import useEmblaCarousel from "embla-carousel-react";
-import { IReview } from "./ReviewsSection";
 import { Avatar, Box, Rating, Stack, Typography } from "@mui/material";
 import { Animate } from "../Animate";
+import { IAvaliacao } from "@/services/interfaces";
 
 export interface IReviewsCarouselProps {
-  reviews: IReview[];
+  reviews: IAvaliacao[];
 }
 
 export const ReviewsCarousel = ({ reviews }: IReviewsCarouselProps) => {
@@ -25,7 +25,7 @@ export const ReviewsCarousel = ({ reviews }: IReviewsCarouselProps) => {
           return (
             <Box
               component={Animate}
-              key={review.name}
+              key={review.id}
               initial={{ opacity: 0, y: "30px" }}
               whileInView={{ opacity: 1, y: "0px" }}
               viewport={{ once: true }}
@@ -58,7 +58,7 @@ export const ReviewsCarousel = ({ reviews }: IReviewsCarouselProps) => {
                 alignItems="flex-start"
               >
                 <Rating
-                  value={review.rating}
+                  value={review.QuantidadeEstrelas}
                   readOnly
                   sx={{
                     "& .MuiRating-iconFilled": {
@@ -77,7 +77,7 @@ export const ReviewsCarousel = ({ reviews }: IReviewsCarouselProps) => {
                       overflow: "hidden",
                     }}
                   >
-                    {review.text}
+                    {review.Texto}
                   </Typography>
 
                   <Box
@@ -100,13 +100,13 @@ export const ReviewsCarousel = ({ reviews }: IReviewsCarouselProps) => {
 
                 <Stack direction="row" alignItems="center" gap={1}>
                   <Avatar
-                    alt={review.name}
-                    src={review.photoUrl}
+                    alt={review.Nome}
+                    src={review.URLFoto ?? undefined}
                     sx={{ width: "2rem", height: "2rem" }}
                   />
 
                   <Typography color="white" fontWeight={400}>
-                    {review.name}
+                    {review.Nome}
                   </Typography>
                 </Stack>
               </Stack>
