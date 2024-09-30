@@ -40,6 +40,7 @@ export const SuitsOptionsPhotosGrid = ({
         }}
       >
         <Image
+          priority
           src={selectedOption.Fotos.data[0].attributes.url}
           alt="Suits Trajes"
           fill
@@ -64,6 +65,7 @@ export const SuitsOptionsPhotosGrid = ({
         }}
       >
         <Image
+          priority
           src={selectedOption.Fotos.data[1].attributes.url}
           alt="Suits Trajes"
           fill
@@ -88,6 +90,7 @@ export const SuitsOptionsPhotosGrid = ({
         }}
       >
         <Image
+          priority
           src={selectedOption.Fotos.data[2].attributes.url}
           alt="Suits Trajes"
           fill
