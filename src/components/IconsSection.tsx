@@ -13,10 +13,40 @@ import FullscreenExitIcon from "@mui/icons-material/FullscreenExit";
 import StyleOutlinedIcon from "@mui/icons-material/StyleOutlined";
 import { getDefaultWhatsappLink } from "@/utils";
 import { Animate } from "./Animate";
+import { getDifferentials } from "@/services/services";
+import { IParagraph } from "@/services/interfaces";
+import { CustomText } from "./CustomText";
 
 export interface IIconsSectionProps {}
 
-export const IconsSection = (props: IIconsSectionProps) => {
+export const IconsSection = async (props: IIconsSectionProps) => {
+  const data = await getDifferentials();
+
+  if (!data) return null;
+
+  const iconsItems: IIconsItem[] = [
+    {
+      Icon: CheckroomIcon,
+      title: data.attributes.Diferenciais[0].Titulo,
+      description: data.attributes.Diferenciais[0].Descricao,
+    },
+    {
+      Icon: WorkspacePremiumOutlinedIcon,
+      title: data.attributes.Diferenciais[1].Titulo,
+      description: data.attributes.Diferenciais[1].Descricao,
+    },
+    {
+      Icon: FullscreenExitIcon,
+      title: data.attributes.Diferenciais[2].Titulo,
+      description: data.attributes.Diferenciais[2].Descricao,
+    },
+    {
+      Icon: StyleOutlinedIcon,
+      title: data.attributes.Diferenciais[3].Titulo,
+      description: data.attributes.Diferenciais[3].Descricao,
+    },
+  ];
+
   return (
     <Container>
       <Box
@@ -48,7 +78,7 @@ export const IconsSection = (props: IIconsSectionProps) => {
           alignItems="flex-start"
         >
           <Typography variant="h2" maxWidth="15ch">
-            Por que alugar um traje na Suits?
+            {data.attributes.Titulo}
           </Typography>
 
           <Button
@@ -58,7 +88,7 @@ export const IconsSection = (props: IIconsSectionProps) => {
             href={getDefaultWhatsappLink()}
             target="_blank"
           >
-            Agendar visita
+            {data.attributes.TextoBotao}
           </Button>
         </Stack>
 
@@ -69,7 +99,7 @@ export const IconsSection = (props: IIconsSectionProps) => {
             display: { xs: "block", md: "none" },
           }}
         >
-          Por que alugar um traje na Suits?
+          {data.attributes.Titulo}
         </Typography>
 
         <Stack gridArea="items" gap={8}>
@@ -91,7 +121,8 @@ export const IconsSection = (props: IIconsSectionProps) => {
 
                   <Stack gap={2}>
                     <Typography variant="h3">{iconItem.title}</Typography>
-                    <Typography>{iconItem.description}</Typography>
+
+                    <CustomText data={iconItem.description} />
                   </Stack>
                 </Stack>
               </Animate>
@@ -110,7 +141,7 @@ export const IconsSection = (props: IIconsSectionProps) => {
           href={getDefaultWhatsappLink()}
           target="_blank"
         >
-          Agendar visita
+          {data.attributes.TextoBotao}
         </Button>
       </Box>
     </Container>
@@ -120,32 +151,5 @@ export const IconsSection = (props: IIconsSectionProps) => {
 interface IIconsItem {
   Icon: JSXElementConstructor<SvgIconProps>;
   title: string;
-  description: string;
+  description: IParagraph[];
 }
-
-const iconsItems: IIconsItem[] = [
-  {
-    Icon: CheckroomIcon,
-    title: "Todos os tamanhos",
-    description:
-      "Oferecemos trajes famosos e elegantes com tamanhos que variam desde PPP até XXXG.",
-  },
-  {
-    Icon: WorkspacePremiumOutlinedIcon,
-    title: "Atendimento diferenciado",
-    description:
-      "Na Suits você será atendido por  profissionais que te ajudarão a  encontrar o seu melhor traje.",
-  },
-  {
-    Icon: FullscreenExitIcon,
-    title: "Ajustes finos",
-    description:
-      "Todos os trajes alugados passam por um alfaiate e são ajustados sob medida para seu corpo.",
-  },
-  {
-    Icon: StyleOutlinedIcon,
-    title: "Variedade & qualidade",
-    description:
-      "Temos ternos com corte italiano, francês, e cores que vão do azul ao verde militar, perfeitos para qualquer ocasião.",
-  },
-];
