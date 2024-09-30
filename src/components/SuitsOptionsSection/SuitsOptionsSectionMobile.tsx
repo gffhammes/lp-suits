@@ -1,13 +1,13 @@
 import { Box, Container, Stack, Typography } from "@mui/material";
-import { ISuitsOption } from "./SuitsOptionsSection";
 import { SuitsOptions } from "./SuitsOptions";
+import { ISecaoOpcoesTrajes } from "@/services/interfaces";
 
 export interface ISuitsOptionsSectionMobileProps {
-  suitsOptions: ISuitsOption[];
+  data: ISecaoOpcoesTrajes;
 }
 
 export const SuitsOptionsSectionMobile = ({
-  suitsOptions,
+  data,
 }: ISuitsOptionsSectionMobileProps) => {
   return (
     <Box>
@@ -19,11 +19,11 @@ export const SuitsOptionsSectionMobile = ({
             maxWidth="20ch"
             sx={{ mx: "auto" }}
           >
-            Veja os melhores trajes para cada evento:
+            {data.attributes.Titulo}
           </Typography>
         </Container>
 
-        <SuitsOptions suitsOptions={suitsOptions} />
+        <SuitsOptions data={data} />
       </Stack>
     </Box>
   );

@@ -1,9 +1,10 @@
+import { IOpcaoTraje } from "@/services/interfaces";
 import { Box, Stack, Typography } from "@mui/material";
-import { ISuitsOption } from "./SuitsOptionsSection";
 import Image from "next/image";
+import { CustomText } from "../CustomText";
 
 export interface ISuitsOptionCardProps {
-  option?: ISuitsOption;
+  option?: IOpcaoTraje;
 }
 
 export const SuitsOptionCard = ({ option }: ISuitsOptionCardProps) => {
@@ -20,7 +21,7 @@ export const SuitsOptionCard = ({ option }: ISuitsOptionCardProps) => {
       >
         <Image
           fill
-          src={option.photos[0]}
+          src={option.Fotos.data[0].attributes.url}
           alt="Suits Trajes"
           objectFit="cover"
         />
@@ -37,10 +38,10 @@ export const SuitsOptionCard = ({ option }: ISuitsOptionCardProps) => {
       >
         <Stack gap={1}>
           <Typography variant="h3" fontSize={16}>
-            {option.label}
+            {option.Titulo}
           </Typography>
 
-          <Typography>{option.description}</Typography>
+          <CustomText data={option.Descricao} />
         </Stack>
       </Box>
     </Stack>

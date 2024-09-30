@@ -108,7 +108,7 @@ export interface ISecaoDiferenciais {
   };
 }
 
-interface OpcaoTraje {
+export interface IOpcaoTraje {
   id: number;
   Titulo: string;
   Descricao: IParagraph[];
@@ -122,7 +122,7 @@ export interface ISecaoOpcoesTrajes {
     TextoBotao: string;
     createdAt: string;
     updatedAt: string;
-    OpcaoTraje: OpcaoTraje[];
+    OpcaoTraje: IOpcaoTraje[];
   };
 }
 

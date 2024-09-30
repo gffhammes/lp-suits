@@ -8,43 +8,54 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-import { ISuitsOption } from "./SuitsOptionsSection";
 import { useState } from "react";
 import { SuitsOptionsPhotosGrid } from "./SuitsOptionsPhotosGrid";
 import EastIcon from "@mui/icons-material/East";
 import { generateWhatsAppLink } from "@/utils";
+import { ISecaoOpcoesTrajes } from "@/services/interfaces";
+import { CustomText } from "../CustomText";
 
 export interface ISuitsOptionsSectionDesktopProps {
-  suitsOptions: ISuitsOption[];
+  data: ISecaoOpcoesTrajes;
 }
 
 export const SuitsOptionsSectionDesktop = ({
-  suitsOptions,
+  data,
 }: ISuitsOptionsSectionDesktopProps) => {
-  const [selectedOption, setSelectedOption] = useState<number>(0);
+  const [selectedOption, setSelectedOption] = useState<number>(
+    data.attributes.OpcaoTraje[0].id
+  );
 
-  const selectedOptionObject = suitsOptions[selectedOption];
+  const selectedOptionObject = data.attributes.OpcaoTraje.find(
+    (option) => option.id === selectedOption
+  )!;
+
+  const selectedOptionIndex = data.attributes.OpcaoTraje.findIndex(
+    (option) => option.id === selectedOption
+  );
 
   return (
     <Container>
       <Stack direction="row" gap={8}>
         <Stack flex="0 0 30rem" gap={4}>
           <Typography variant="h2" maxWidth="20ch">
-            Veja os melhores trajes para cada evento:
+            {data.attributes.Titulo}{" "}
           </Typography>
 
           <Stack maxWidth="25rem">
-            {suitsOptions.map((option, index) => {
-              const isSelectedOption = index === selectedOption;
-              const isLastSlide = index === suitsOptions.length - 1;
+            {data.attributes.OpcaoTraje.map((option, index) => {
+              const isSelectedOption = option.id === selectedOption;
+
+              const isLastSlide =
+                index === data.attributes.OpcaoTraje.length - 1;
 
               const showBorder =
                 !isSelectedOption &&
                 !isLastSlide &&
-                index !== selectedOption - 1;
+                index !== selectedOptionIndex - 1;
 
               return (
-                <Box key={option.label}>
+                <Box key={option.id}>
                   <Box
                     sx={{
                       backgroundColor: isSelectedOption
@@ -65,7 +76,7 @@ export const SuitsOptionsSectionDesktop = ({
                             },
                       },
                     }}
-                    onClick={() => setSelectedOption(index)}
+                    onClick={() => setSelectedOption(option.id)}
                   >
                     <Stack>
                       <Stack direction="row" alignItems="center" gap={2}>
@@ -81,7 +92,7 @@ export const SuitsOptionsSectionDesktop = ({
                               : "rgba(255,255,255,.3)"
                           }
                         >
-                          {option.label}
+                          {option.Titulo}
                         </Typography>
 
                         <EastIcon
@@ -105,21 +116,12 @@ export const SuitsOptionsSectionDesktop = ({
                           alignItems="flex-start"
                         >
                           <Stack gap={1}>
-                            <Typography
-                              sx={{
-                                display: "-webkit-box",
-                                WebkitLineClamp: "3",
-                                WebkitBoxOrient: "vertical",
-                                overflow: "hidden",
-                              }}
-                            >
-                              {option.description}
-                            </Typography>
+                            <CustomText data={option.Descricao} />
                           </Stack>
 
                           <a
                             href={generateWhatsAppLink(
-                              `Olá, vim pelo site e gostaria de alugar um traje elegante para o evento ${option.label}!`
+                              `Olá, vim pelo site e gostaria de alugar um traje elegante para o evento ${option.Titulo}!`
                             )}
                             target="_blank"
                           >
@@ -133,7 +135,7 @@ export const SuitsOptionsSectionDesktop = ({
                                 },
                               }}
                             >
-                              QUERO PROVAR
+                              {data.attributes.TextoBotao}
                             </Typography>
                           </a>
                         </Stack>

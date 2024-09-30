@@ -2,12 +2,12 @@ import { DiamondPhotosSection } from "@/components/DiamondPhotosSection/DiamondP
 import { HeroSection } from "@/components/HeroSection";
 import { Container, Divider, Stack } from "@mui/material";
 import { IconsSection } from "@/components/IconsSection";
-import { SuitsOptionsSection } from "@/components/SuitsOptionsSection/SuitsOptionsSection";
 import { ReviewsSection } from "@/components/ReviewsSection/ReviewsSection";
 import { BigCTASection } from "@/components/BigCTASection";
 import { FinalSection } from "@/components/FinalSection/FinalSection";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { SuitsOptionsSection } from "@/components/SuitsOptionsSection/SuitsOptionsSection";
 
 export default function Home() {
   return (

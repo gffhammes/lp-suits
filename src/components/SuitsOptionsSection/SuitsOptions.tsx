@@ -1,28 +1,29 @@
 "use client";
 
 import { useState } from "react";
-import { ISuitsOption } from "./SuitsOptionsSection";
 import { SuitsOptionsSelector } from "./SuitsOptionsSelector";
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import { SuitsOptionCard } from "./SuitsOptionCard";
 import { generateWhatsAppLink, getDefaultWhatsappLink } from "@/utils";
+import { ISecaoOpcoesTrajes } from "@/services/interfaces";
 
 export interface ISuitsOptionsProps {
-  suitsOptions: ISuitsOption[];
+  data: ISecaoOpcoesTrajes;
 }
 
-export const SuitsOptions = ({ suitsOptions }: ISuitsOptionsProps) => {
-  const [selectedOption, setSelectedOption] =
-    useState<string>("Casamento Noturno");
+export const SuitsOptions = ({ data }: ISuitsOptionsProps) => {
+  const [selectedOption, setSelectedOption] = useState(
+    data.attributes.OpcaoTraje[0].id
+  );
 
-  const selectedOptionObject = suitsOptions.find(
-    (option) => option.label === selectedOption
+  const selectedOptionObject = data.attributes.OpcaoTraje.find(
+    (option) => option.id === selectedOption
   );
 
   return (
     <Stack gap={4} alignItems="center">
       <SuitsOptionsSelector
-        suitsOptions={suitsOptions}
+        data={data}
         selectedOption={selectedOption}
         onSelectedOptionChange={(option) => setSelectedOption(option)}
       />
@@ -35,11 +36,11 @@ export const SuitsOptions = ({ suitsOptions }: ISuitsOptionsProps) => {
             variant="contained"
             LinkComponent={"a"}
             href={generateWhatsAppLink(
-              `Olá, vim pelo site e gostaria de alugar um traje elegante para o evento ${selectedOption}!`
+              `Olá, vim pelo site e gostaria de alugar um traje elegante para o evento ${selectedOptionObject?.Titulo}!`
             )}
             target="_blank"
           >
-            Quero provar
+            {data.attributes.TextoBotao}
           </Button>
         </Stack>
       </Container>

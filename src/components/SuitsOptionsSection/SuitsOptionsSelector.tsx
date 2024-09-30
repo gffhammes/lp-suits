@@ -1,18 +1,18 @@
 "use client";
 
 import { Box, Stack, Typography } from "@mui/material";
-import { ISuitsOption } from "./SuitsOptionsSection";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback } from "react";
+import { ISecaoOpcoesTrajes } from "@/services/interfaces";
 
 export interface ISuitsOptionsSelectorProps {
-  suitsOptions: ISuitsOption[];
-  selectedOption: string;
-  onSelectedOptionChange: (selectedOption: string) => void;
+  data: ISecaoOpcoesTrajes;
+  selectedOption: number;
+  onSelectedOptionChange: (selectedOption: number) => void;
 }
 
 export const SuitsOptionsSelector = ({
-  suitsOptions,
+  data,
   selectedOption,
   onSelectedOptionChange,
 }: ISuitsOptionsSelectorProps) => {
@@ -37,21 +37,21 @@ export const SuitsOptionsSelector = ({
       sx={{ overflow: "hidden", width: "100%" }}
     >
       <Box className="embla__container" sx={{ display: "flex" }}>
-        {suitsOptions.map((option, index) => {
-          const isSelectedOption = option.label === selectedOption;
+        {data.attributes.OpcaoTraje.map((option, index) => {
+          const isSelectedOption = option.id === selectedOption;
           const isFirstSlide = index === 0;
-          const isLastSlide = index === suitsOptions.length - 1;
+          const isLastSlide = index === data.attributes.OpcaoTraje.length - 1;
 
           return (
             <Box
-              key={option.label}
+              key={option.id}
               sx={{
                 flex: "0 0 auto",
                 pl: isFirstSlide ? 2 : 1,
                 pr: isLastSlide ? 2 : 0,
               }}
               onClick={() => {
-                onSelectedOptionChange(option.label);
+                onSelectedOptionChange(option.id);
                 onItemClick(index);
               }}
             >
@@ -72,7 +72,7 @@ export const SuitsOptionsSelector = ({
                   fontSize={14}
                   color={isSelectedOption ? "secondary" : undefined}
                 >
-                  {option.label}
+                  {option.Titulo}
                 </Typography>
               </Box>
             </Box>

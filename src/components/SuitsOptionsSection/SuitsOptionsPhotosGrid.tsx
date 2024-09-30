@@ -1,10 +1,10 @@
 import { Box } from "@mui/material";
 import { Animate } from "../Animate";
-import { ISuitsOption } from "./SuitsOptionsSection";
 import Image from "next/image";
+import { IOpcaoTraje, ISecaoOpcoesTrajes } from "@/services/interfaces";
 
 export interface ISuitsOptionsPhotosGridProps {
-  selectedOption: ISuitsOption;
+  selectedOption: IOpcaoTraje;
 }
 
 export const SuitsOptionsPhotosGrid = ({
@@ -33,14 +33,14 @@ export const SuitsOptionsPhotosGrid = ({
           delay: 0.6,
         }}
         animate={{ opacity: 1, x: "-0px" }}
-        key={selectedOption.photos[0] + selectedOption.label}
+        key={`${selectedOption.Fotos.data[0].id} ${selectedOption.id}`}
         style={{
           gridArea: "image1",
           position: "relative",
         }}
       >
         <Image
-          src={selectedOption.photos[0]}
+          src={selectedOption.Fotos.data[0].attributes.url}
           alt="Suits Trajes"
           fill
           objectFit="cover"
@@ -57,14 +57,14 @@ export const SuitsOptionsPhotosGrid = ({
           delay: 0.8,
         }}
         animate={{ opacity: 1, x: "-0px" }}
-        key={selectedOption.photos[1] + selectedOption.label}
+        key={`${selectedOption.Fotos.data[1].id} ${selectedOption.id}`}
         style={{
           gridArea: "image2",
           position: "relative",
         }}
       >
         <Image
-          src={selectedOption.photos[1]}
+          src={selectedOption.Fotos.data[1].attributes.url}
           alt="Suits Trajes"
           fill
           objectFit="cover"
@@ -81,14 +81,14 @@ export const SuitsOptionsPhotosGrid = ({
           delay: 0.2,
         }}
         animate={{ opacity: 1, x: "-0px" }}
-        key={selectedOption.photos[2] + selectedOption.label}
+        key={`${selectedOption.Fotos.data[2].id} ${selectedOption.id}`}
         style={{
           gridArea: "image3",
           position: "relative",
         }}
       >
         <Image
-          src={selectedOption.photos[2]}
+          src={selectedOption.Fotos.data[2].attributes.url}
           alt="Suits Trajes"
           fill
           objectFit="cover"
