@@ -4,6 +4,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import { Avatar, Box, Rating, Stack, Typography } from "@mui/material";
 import { Animate } from "../Animate";
 import { IAvaliacao } from "@/services/interfaces";
+import { useBreakpoints } from "@/hooks/useBreakpoints";
 
 export interface IReviewsCarouselProps {
   reviews: IAvaliacao[];
@@ -11,6 +12,7 @@ export interface IReviewsCarouselProps {
 
 export const ReviewsCarousel = ({ reviews }: IReviewsCarouselProps) => {
   const [emblaRef] = useEmblaCarousel({ align: "start", skipSnaps: true });
+  const { md } = useBreakpoints();
 
   return (
     <Box className="embla" ref={emblaRef} sx={{ overflow: "hidden" }}>
@@ -21,6 +23,7 @@ export const ReviewsCarousel = ({ reviews }: IReviewsCarouselProps) => {
       >
         {reviews.map((review, index) => {
           const isLastSlide = index === reviews.length - 1;
+          const delayAnimation = md || index <= 1;
 
           return (
             <Box
@@ -31,7 +34,7 @@ export const ReviewsCarousel = ({ reviews }: IReviewsCarouselProps) => {
               viewport={{ once: true }}
               transition={{
                 duration: 1,
-                delay: (index + 1) * 0.6,
+                delay: delayAnimation ? (index + 1) * 0.6 : undefined,
               }}
               height="100%"
               sx={{
