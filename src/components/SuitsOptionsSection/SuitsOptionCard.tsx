@@ -2,6 +2,7 @@ import { IOpcaoTraje } from "@/services/interfaces";
 import { Box, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import { CustomText } from "../CustomText";
+import { Animate } from "../Animate";
 
 export interface ISuitsOptionCardProps {
   option?: IOpcaoTraje;
@@ -19,12 +20,23 @@ export const SuitsOptionCard = ({ option }: ISuitsOptionCardProps) => {
           position: "relative",
         }}
       >
-        <Image
-          fill
-          src={option.Fotos.data[0].attributes.url}
-          alt="Suits Trajes"
-          objectFit="cover"
-        />
+        <Animate
+          animate={{
+            opacity: 1,
+          }}
+          initial={{
+            opacity: 0,
+          }}
+          transition={{ duration: 1 }}
+          key={option.id}
+        >
+          <Image
+            fill
+            src={option.Fotos.data[0].attributes.url}
+            alt="Suits Trajes"
+            objectFit="cover"
+          />
+        </Animate>
       </Box>
 
       <Box
@@ -36,13 +48,24 @@ export const SuitsOptionCard = ({ option }: ISuitsOptionCardProps) => {
           overflow: "hidden",
         }}
       >
-        <Stack gap={1}>
-          <Typography variant="h3" fontSize={16}>
-            {option.Titulo}
-          </Typography>
+        <Animate
+          animate={{
+            opacity: 1,
+          }}
+          initial={{
+            opacity: 0,
+          }}
+          transition={{ duration: 1 }}
+          key={option.id}
+        >
+          <Stack gap={1}>
+            <Typography variant="h3" fontSize={16}>
+              {option.Titulo}
+            </Typography>
 
-          <CustomText data={option.Descricao} />
-        </Stack>
+            <CustomText data={option.Descricao} />
+          </Stack>
+        </Animate>
       </Box>
     </Stack>
   );
