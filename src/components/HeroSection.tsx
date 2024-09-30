@@ -1,14 +1,19 @@
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
-import image from "../../public/images/bride-adjusting-her-boyfriend-s-bow-tie.webp";
 import Image from "next/image";
 import { Logo } from "./Logo";
 import { getDefaultWhatsappLink } from "@/utils";
 import { HeroSectionArrowButton } from "./HeroSectionArrowButton";
 import { Animate } from "./Animate";
+import { getHeroSection } from "@/services/services";
+import { CustomText } from "./CustomText";
 
 export interface IHeroSectionProps {}
 
-export const HeroSection = (props: IHeroSectionProps) => {
+export const HeroSection = async (props: IHeroSectionProps) => {
+  const data = await getHeroSection();
+
+  if (!data) return null;
+
   return (
     <Box>
       <Box
@@ -19,7 +24,7 @@ export const HeroSection = (props: IHeroSectionProps) => {
         }}
       >
         <Image
-          src={image.src}
+          src={data.attributes.Capa.data.attributes.url}
           alt=""
           fill
           objectFit="cover"
@@ -53,7 +58,7 @@ export const HeroSection = (props: IHeroSectionProps) => {
                 transition={{ duration: 1 }}
               >
                 <Typography variant="h1" maxWidth="17ch">
-                  Aluguel de trajes com a elegância que você merece.
+                  {data.attributes.Titulo}{" "}
                 </Typography>
               </Animate>
 
@@ -62,11 +67,13 @@ export const HeroSection = (props: IHeroSectionProps) => {
                 initial={{ opacity: 0, y: "30px" }}
                 transition={{ duration: 1, delay: 0.5 }}
               >
-                <Typography maxWidth="50ch" color="white">
-                  Tenha muita presença com{" "}
-                  <strong>trajes masculinos elegantes</strong> e ajustados com
-                  perfeição para qualquer evento.
-                </Typography>
+                <CustomText
+                  data={data.attributes.Descricao}
+                  containerProps={{
+                    maxWidth: "50ch",
+                    color: "white",
+                  }}
+                />
               </Animate>
             </Stack>
 
@@ -82,7 +89,7 @@ export const HeroSection = (props: IHeroSectionProps) => {
                 target="_blank"
                 size="large"
               >
-                Alugar traje
+                {data.attributes.TextoBotao}
               </Button>
             </Animate>
           </Stack>

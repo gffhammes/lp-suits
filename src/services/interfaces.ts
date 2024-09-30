@@ -52,14 +52,14 @@ interface ParagraphChild {
   bold?: boolean;
 }
 
-interface Paragraph {
+export interface IParagraph {
   type: "paragraph";
   children: ParagraphChild[];
 }
 
 interface Attributes {
   Titulo: string;
-  Descricao: Paragraph[];
+  Descricao: IParagraph[];
   TextoBotao: string;
   createdAt: string;
   updatedAt: string;
@@ -77,7 +77,7 @@ export interface ISecaoFotosDiamante {
   id: number;
   attributes: {
     Titulo: string;
-    Descricao: Paragraph[];
+    Descricao: IParagraph[];
     TextoBotao: string;
     createdAt: string;
     updatedAt: string;
@@ -96,7 +96,7 @@ export interface ISecaoFotosDiamante {
 interface Diferencial {
   id: number;
   Titulo: string;
-  Descricao: Paragraph[];
+  Descricao: IParagraph[];
 }
 
 export interface ISecaoDiferenciais {
@@ -113,7 +113,7 @@ export interface ISecaoDiferenciais {
 interface OpcaoTraje {
   id: number;
   Titulo: string;
-  Descricao: Paragraph[];
+  Descricao: IParagraph[];
   Fotos: { data: ImageData[] };
 }
 

@@ -4,6 +4,9 @@ const nextConfig = { images: {
       {
         protocol: 'https',
         hostname: 'www.studiodireto.com.br',
+      },  {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
       },
     ],
   },};
