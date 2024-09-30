@@ -2,10 +2,18 @@ import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import { DiamondPhotos } from "./DiamondPhotos";
 import { getDefaultWhatsappLink } from "@/utils";
 import { Animate } from "../Animate";
+import { getDiamondPhotosSection } from "@/services/services";
+import { CustomText } from "../CustomText";
 
 export interface IDiamondPhotosSectionProps {}
 
-export const DiamondPhotosSection = (props: IDiamondPhotosSectionProps) => {
+export const DiamondPhotosSection = async (
+  props: IDiamondPhotosSectionProps
+) => {
+  const data = await getDiamondPhotosSection();
+
+  if (!data) return null;
+
   return (
     <Box>
       <Container>
@@ -17,7 +25,7 @@ export const DiamondPhotosSection = (props: IDiamondPhotosSectionProps) => {
             transition={{ duration: 1, delay: 0.5 }}
           >
             <Typography variant="h2" textAlign="center" maxWidth="20ch">
-              O traje ideal para seu evento está aqui
+              {data.attributes.Titulo}
             </Typography>
           </Animate>
 
@@ -27,10 +35,13 @@ export const DiamondPhotosSection = (props: IDiamondPhotosSectionProps) => {
             viewport={{ once: true, margin: "-20%" }}
             transition={{ duration: 1, delay: 1 }}
           >
-            <Typography textAlign="center" maxWidth="35ch">
-              Na Suits você encontra a maior variedade de cores e modelos
-              disponíveis no mercado.
-            </Typography>
+            <CustomText
+              data={data.attributes.Descricao}
+              containerProps={{
+                maxWidth: "35ch",
+                textAlign: "center",
+              }}
+            />
           </Animate>
 
           <Animate
@@ -45,13 +56,17 @@ export const DiamondPhotosSection = (props: IDiamondPhotosSectionProps) => {
               href={getDefaultWhatsappLink()}
               target="_blank"
             >
-              Agendar visita
+              {data.attributes.TextoBotao}
             </Button>
           </Animate>
         </Stack>
       </Container>
 
-      <DiamondPhotos />
+      <DiamondPhotos
+        photo1={data.attributes.Foto1}
+        photo2={data.attributes.Foto2}
+        photo3={data.attributes.Foto3}
+      />
     </Box>
   );
 };

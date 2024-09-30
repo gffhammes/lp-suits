@@ -2,15 +2,21 @@
 
 import { Box } from "@mui/material";
 import { DiamondPhoto } from "./DiamondPhoto";
-import foto1 from "../../../public/images/2H0A9578.jpeg";
-import foto2 from "../../../public/images/2H0A9848.jpeg";
-import foto3 from "../../../public/images/2H0A9939.jpeg";
 import { useBreakpoints } from "@/hooks/useBreakpoints";
 import { useMemo } from "react";
+import { IImage } from "@/services/interfaces";
 
-export interface IDiamondPhotosProps {}
+export interface IDiamondPhotosProps {
+  photo1: IImage;
+  photo2: IImage;
+  photo3: IImage;
+}
 
-export const DiamondPhotos = (props: IDiamondPhotosProps) => {
+export const DiamondPhotos = ({
+  photo1,
+  photo2,
+  photo3,
+}: IDiamondPhotosProps) => {
   const { sm, md, lg, xl } = useBreakpoints();
 
   const diamondSize = useMemo(() => {
@@ -43,7 +49,7 @@ export const DiamondPhotos = (props: IDiamondPhotosProps) => {
           transform: `translateX(calc(-100% - ${diamondsGap}))`,
         }}
       >
-        <DiamondPhoto size={diamondSize} src={foto1.src} />
+        <DiamondPhoto size={diamondSize} src={photo1.data.attributes.url} />
       </Box>
 
       <Box
@@ -56,7 +62,7 @@ export const DiamondPhotos = (props: IDiamondPhotosProps) => {
           transform: `translate(-50%, calc(50% + ${diamondsGap}))`,
         }}
       >
-        <DiamondPhoto size={diamondSize} src={foto2.src} />
+        <DiamondPhoto size={diamondSize} src={photo2.data.attributes.url} />
       </Box>
 
       <Box
@@ -69,7 +75,7 @@ export const DiamondPhotos = (props: IDiamondPhotosProps) => {
           transform: `translateX(calc(100% + ${diamondsGap}))`,
         }}
       >
-        <DiamondPhoto size={diamondSize} src={foto3.src} />
+        <DiamondPhoto size={diamondSize} src={photo3.data.attributes.url} />
       </Box>
     </Box>
   );

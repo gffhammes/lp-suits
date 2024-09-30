@@ -41,9 +41,13 @@ interface ImageAttributes {
   updatedAt: string;
 }
 
-interface ImageData {
+export interface IImageData {
   id: number;
   attributes: ImageAttributes;
+}
+
+export interface IImage {
+  data: IImageData;
 }
 
 interface ParagraphChild {
@@ -64,7 +68,7 @@ interface Attributes {
   createdAt: string;
   updatedAt: string;
   Capa: {
-    data: ImageData;
+    data: IImageData;
   };
 }
 
@@ -81,15 +85,9 @@ export interface ISecaoFotosDiamante {
     TextoBotao: string;
     createdAt: string;
     updatedAt: string;
-    Foto1: {
-      data: ImageData;
-    };
-    Foto2: {
-      data: ImageData;
-    };
-    Foto3: {
-      data: ImageData;
-    };
+    Foto1: IImage;
+    Foto2: IImage;
+    Foto3: IImage;
   };
 }
 
@@ -114,7 +112,7 @@ interface OpcaoTraje {
   id: number;
   Titulo: string;
   Descricao: IParagraph[];
-  Fotos: { data: ImageData[] };
+  Fotos: { data: IImageData[] };
 }
 
 export interface ISecaoOpcoesTrajes {
