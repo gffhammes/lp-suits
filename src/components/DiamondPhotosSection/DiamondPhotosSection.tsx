@@ -22,7 +22,7 @@ export const DiamondPhotosSection = async (
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true, margin: "-35%" }}
-            transition={{ duration: 1, delay: 0.5 }}
+            transition={{ duration: 1 }}
           >
             <Typography variant="h2" textAlign="center" maxWidth="20ch">
               {data.attributes.Titulo}
@@ -32,8 +32,8 @@ export const DiamondPhotosSection = async (
           <Animate
             initial={{ opacity: 0, y: "30px" }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-20%" }}
-            transition={{ duration: 1, delay: 1 }}
+            viewport={{ once: true, margin: "-35%" }}
+            transition={{ duration: 1 }}
           >
             <CustomText
               data={data.attributes.Descricao}
@@ -47,8 +47,8 @@ export const DiamondPhotosSection = async (
           <Animate
             initial={{ opacity: 0, y: "30px" }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-15%" }}
-            transition={{ duration: 1, delay: 1.5 }}
+            viewport={{ once: true, margin: "-35%" }}
+            transition={{ duration: 1 }}
           >
             <Button
               variant="contained"
