@@ -11,6 +11,20 @@ export const metadata: Metadata = {
   title: "Suits | Aluguel de Trajes Masculinos Elegantes",
   description:
     "Aluguel de trajes masculinos elegantes com grande variedade e ajustes sob medida por alfaiate. Tenha o look perfeito para qualquer ocasião com nosso atendimento especializado e assessoria de estilo personalizada.",
+  icons: {
+    icon: [
+      {
+        media: "(prefers-color-scheme: light)",
+        url: "/images/black-favicon.ico",
+        href: "/images/black-favicon.ico",
+      },
+      {
+        media: "(prefers-color-scheme: dark)",
+        url: "/images/white-favicon.ico",
+        href: "/images/white-favicon.ico",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -28,7 +42,6 @@ export default function RootLayout({
 
       <GoogleTagManager gtmId="GTM-MPDH9DPN" />
       <GoogleTagManager gtmId="GTM-TRBSTKML" />
-      {/* <GoogleAnalytics gaId="G-D8EH0M00KS" /> */}
 
       <Script
         id="microsoft-clarity-init"
