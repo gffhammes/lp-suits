@@ -17,5 +17,5 @@ export const DataLayerVariant = ({ variant = "A" }: IDataLayerVariantProps) => {
     }
   }, [variant]);
 
-  return <>DataLayerVariant</>;
+  return null;
 };
