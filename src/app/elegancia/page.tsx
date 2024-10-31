@@ -8,6 +8,7 @@ import { FinalSection } from "@/components/FinalSection/FinalSection";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SuitsOptionsSection } from "@/components/SuitsOptionsSection/SuitsOptionsSection";
+import { DataLayerVariant } from "@/components/DataLayerVariant";
 
 export default function Home() {
   return (
@@ -41,6 +42,8 @@ export default function Home() {
 
         <Footer />
       </Stack>
+
+      <DataLayerVariant variant="A" />
     </main>
   );
 }

@@ -9,6 +9,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SuitsOptionsSection } from "@/components/SuitsOptionsSection/SuitsOptionsSection";
 import customHeroBg from "../../../public/images/2H0A1687.jpeg";
+import { DataLayerVariant } from "@/components/DataLayerVariant";
 
 export default function Home() {
   return (
@@ -46,6 +47,8 @@ export default function Home() {
 
         <Footer />
       </Stack>
+
+      <DataLayerVariant variant="B" />
     </main>
   );
 }

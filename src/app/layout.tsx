@@ -39,8 +39,6 @@ export default function RootLayout({
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>{children}</ThemeProvider>
         </AppRouterCacheProvider>
-
-        <DataLayerVariant variant="A" />
       </body>
 
       <GoogleTagManager gtmId="GTM-MPDH9DPN" />
