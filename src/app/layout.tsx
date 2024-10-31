@@ -6,6 +6,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import theme from "../theme";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import Script from "next/script";
+import { DataLayerVariant } from "@/components/DataLayerVariant";
 
 export const metadata: Metadata = {
   title: "Suits | Aluguel de Trajes Masculinos Elegantes",
@@ -38,6 +39,8 @@ export default function RootLayout({
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>{children}</ThemeProvider>
         </AppRouterCacheProvider>
+
+        <DataLayerVariant variant="A" />
       </body>
 
       <GoogleTagManager gtmId="GTM-MPDH9DPN" />
