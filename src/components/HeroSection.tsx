@@ -7,9 +7,17 @@ import { Animate } from "./Animate";
 import { getHeroSection } from "@/services/services";
 import { CustomText } from "./CustomText";
 
-export interface IHeroSectionProps {}
+export interface IHeroSectionProps {
+  title?: string;
+  subTitle?: string;
+  bgImageUrl?: string;
+}
 
-export const HeroSection = async (props: IHeroSectionProps) => {
+export const HeroSection = async ({
+  title,
+  subTitle,
+  bgImageUrl,
+}: IHeroSectionProps) => {
   const data = await getHeroSection();
 
   if (!data) return null;
@@ -24,7 +32,7 @@ export const HeroSection = async (props: IHeroSectionProps) => {
         }}
       >
         <Image
-          src={data.attributes.Capa.data.attributes.url}
+          src={bgImageUrl ?? data.attributes.Capa.data.attributes.url}
           alt=""
           fill
           objectFit="cover"
@@ -58,7 +66,7 @@ export const HeroSection = async (props: IHeroSectionProps) => {
                 transition={{ duration: 1 }}
               >
                 <Typography variant="h1" maxWidth="17ch">
-                  {data.attributes.Titulo}{" "}
+                  {title ?? data.attributes.Titulo}
                 </Typography>
               </Animate>
 
@@ -67,13 +75,24 @@ export const HeroSection = async (props: IHeroSectionProps) => {
                 initial={{ opacity: 0, y: "30px" }}
                 transition={{ duration: 1, delay: 0.5 }}
               >
-                <CustomText
-                  data={data.attributes.Descricao}
-                  containerProps={{
-                    maxWidth: "50ch",
-                    color: "white",
-                  }}
-                />
+                {subTitle ? (
+                  <Typography
+                    sx={{
+                      maxWidth: "50ch",
+                      color: "white",
+                    }}
+                  >
+                    {subTitle}
+                  </Typography>
+                ) : (
+                  <CustomText
+                    data={data.attributes.Descricao}
+                    containerProps={{
+                      maxWidth: "50ch",
+                      color: "white",
+                    }}
+                  />
+                )}
               </Animate>
             </Stack>
 
