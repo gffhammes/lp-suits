@@ -13,17 +13,12 @@ import FullscreenExitIcon from "@mui/icons-material/FullscreenExit";
 import StyleOutlinedIcon from "@mui/icons-material/StyleOutlined";
 import { getDefaultWhatsappLink } from "@/utils";
 import { Animate } from "./Animate";
-import { getDifferentials } from "@/services/services";
-import { IParagraph } from "@/services/interfaces";
+import { IParagraph, ISecaoDiferenciais } from "@/services/interfaces";
 import { CustomText } from "./CustomText";
 
 export interface IIconsSectionProps {}
 
 export const IconsSection = async (props: IIconsSectionProps) => {
-  const data = await getDifferentials();
-
-  if (!data) return null;
-
   const iconsItems: IIconsItem[] = [
     {
       Icon: CheckroomIcon,
@@ -153,3 +148,75 @@ interface IIconsItem {
   title: string;
   description: IParagraph[];
 }
+
+const data: ISecaoDiferenciais = {
+  id: 1,
+  attributes: {
+    Titulo: "Por que alugar um traje na Suits?",
+    TextoBotao: "AGENDAR VISITA",
+    createdAt: "2024-09-27T12:50:02.439Z",
+    updatedAt: "2024-09-30T23:03:37.801Z",
+    Diferenciais: [
+      {
+        id: 1,
+        Titulo: "Todos os tamanhos",
+        Descricao: [
+          {
+            type: "paragraph",
+            children: [
+              {
+                text: "Disponibilizamos trajes sofisticados em uma ampla variedade de tamanhos, do PPP ao XXXG, garantindo o ajuste ideal para todos.",
+                type: "text",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: 2,
+        Titulo: "Atendimento diferenciado",
+        Descricao: [
+          {
+            type: "paragraph",
+            children: [
+              {
+                text: "Na Suits, nossos especialistas estão prontos para guiá-lo na escolha do traje que melhor reflete seu estilo e ocasião.",
+                type: "text",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: 3,
+        Titulo: "Ajustes finos",
+        Descricao: [
+          {
+            type: "paragraph",
+            children: [
+              {
+                text: "Todos os trajes passam por ajustes sob medida com alfaiates experientes, assegurando um caimento impecável para você.",
+                type: "text",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: 4,
+        Titulo: "Variedade & qualidade",
+        Descricao: [
+          {
+            type: "paragraph",
+            children: [
+              {
+                text: "Nossa coleção oferece uma seleção de trajes em diversas cores e estilos, garantindo opções elegantes para qualquer ocasião especial.",
+                type: "text",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+};

@@ -4,6 +4,7 @@ import { useBreakpoints } from "@/hooks/useBreakpoints";
 import { SuitsOptionsSectionDesktop } from "./SuitsOptionsSectionDesktop";
 import { SuitsOptionsSectionMobile } from "./SuitsOptionsSectionMobile";
 import { ISecaoOpcoesTrajes } from "@/services/interfaces";
+import { Box } from "@mui/material";
 
 export interface ISuitsOptionsSectionResponsiveProps {
   data: ISecaoOpcoesTrajes;
@@ -14,7 +15,15 @@ export const SuitsOptionsSectionResponsive = ({
 }: ISuitsOptionsSectionResponsiveProps) => {
   const { md } = useBreakpoints();
 
-  if (md) return <SuitsOptionsSectionDesktop data={data} />;
+  return (
+    <>
+      <Box sx={{ display: { xs: "none", md: "block" } }}>
+        <SuitsOptionsSectionDesktop data={data} />
+      </Box>
 
-  return <SuitsOptionsSectionMobile data={data} />;
+      <Box sx={{ display: { xs: "block", md: "none" } }}>
+        <SuitsOptionsSectionMobile data={data} />
+      </Box>
+    </>
+  );
 };

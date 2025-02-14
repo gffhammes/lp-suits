@@ -4,8 +4,8 @@ import { Logo } from "./Logo";
 import { getDefaultWhatsappLink } from "@/utils";
 import { HeroSectionArrowButton } from "./HeroSectionArrowButton";
 import { Animate } from "./Animate";
-import { getHeroSection } from "@/services/services";
 import { CustomText } from "./CustomText";
+import { IPrimeiraSecao } from "@/services/interfaces";
 
 export interface IHeroSectionProps {
   title?: string;
@@ -18,10 +18,6 @@ export const HeroSection = async ({
   subTitle,
   bgImageUrl,
 }: IHeroSectionProps) => {
-  const data = await getHeroSection();
-
-  if (!data) return null;
-
   return (
     <Box>
       <Box
@@ -120,4 +116,130 @@ export const HeroSection = async ({
       </Stack>
     </Box>
   );
+};
+
+const data: IPrimeiraSecao = {
+  id: 1,
+  attributes: {
+    Titulo: "Aluguel de trajes com a elegância que você merece.",
+    Descricao: [
+      {
+        type: "paragraph",
+        children: [
+          {
+            text: "Tenha muita presença com ",
+            type: "text",
+          },
+          {
+            bold: true,
+            text: "trajes masculinos elegantes",
+            type: "text",
+          },
+          {
+            text: " e ajustados com perfeição para qualquer evento.",
+            type: "text",
+          },
+        ],
+      },
+    ],
+    TextoBotao: "ALUGAR TRAJE",
+    createdAt: "2024-09-27T12:40:53.453Z",
+    updatedAt: "2024-10-01T20:23:56.076Z",
+    Capa: {
+      data: {
+        id: 1,
+        attributes: {
+          name: "bride-adjusting-her-boyfriend-s-bow-tie.webp",
+          alternativeText: null,
+          caption: null,
+          width: 3000,
+          height: 2000,
+          formats: {
+            large: {
+              ext: ".webp",
+              url: "https://res.cloudinary.com/de5rrszh7/image/upload/v1727440847/Suits/large_bride_adjusting_her_boyfriend_s_bow_tie_ad1bbf50b7.webp",
+              hash: "large_bride_adjusting_her_boyfriend_s_bow_tie_ad1bbf50b7",
+              mime: "image/webp",
+              name: "large_bride-adjusting-her-boyfriend-s-bow-tie.webp",
+              path: null,
+              size: 31.28,
+              width: 1000,
+              height: 667,
+              sizeInBytes: 31280,
+              provider_metadata: {
+                public_id:
+                  "Suits/large_bride_adjusting_her_boyfriend_s_bow_tie_ad1bbf50b7",
+                resource_type: "image",
+              },
+            },
+            small: {
+              ext: ".webp",
+              url: "https://res.cloudinary.com/de5rrszh7/image/upload/v1727440847/Suits/small_bride_adjusting_her_boyfriend_s_bow_tie_ad1bbf50b7.webp",
+              hash: "small_bride_adjusting_her_boyfriend_s_bow_tie_ad1bbf50b7",
+              mime: "image/webp",
+              name: "small_bride-adjusting-her-boyfriend-s-bow-tie.webp",
+              path: null,
+              size: 13.53,
+              width: 500,
+              height: 333,
+              sizeInBytes: 13532,
+              provider_metadata: {
+                public_id:
+                  "Suits/small_bride_adjusting_her_boyfriend_s_bow_tie_ad1bbf50b7",
+                resource_type: "image",
+              },
+            },
+            medium: {
+              ext: ".webp",
+              url: "https://res.cloudinary.com/de5rrszh7/image/upload/v1727440847/Suits/medium_bride_adjusting_her_boyfriend_s_bow_tie_ad1bbf50b7.webp",
+              hash: "medium_bride_adjusting_her_boyfriend_s_bow_tie_ad1bbf50b7",
+              mime: "image/webp",
+              name: "medium_bride-adjusting-her-boyfriend-s-bow-tie.webp",
+              path: null,
+              size: 22.26,
+              width: 750,
+              height: 500,
+              sizeInBytes: 22264,
+              provider_metadata: {
+                public_id:
+                  "Suits/medium_bride_adjusting_her_boyfriend_s_bow_tie_ad1bbf50b7",
+                resource_type: "image",
+              },
+            },
+            thumbnail: {
+              ext: ".webp",
+              url: "https://res.cloudinary.com/de5rrszh7/image/upload/v1727440847/Suits/thumbnail_bride_adjusting_her_boyfriend_s_bow_tie_ad1bbf50b7.webp",
+              hash: "thumbnail_bride_adjusting_her_boyfriend_s_bow_tie_ad1bbf50b7",
+              mime: "image/webp",
+              name: "thumbnail_bride-adjusting-her-boyfriend-s-bow-tie.webp",
+              path: null,
+              size: 5.39,
+              width: 234,
+              height: 156,
+              sizeInBytes: 5388,
+              provider_metadata: {
+                public_id:
+                  "Suits/thumbnail_bride_adjusting_her_boyfriend_s_bow_tie_ad1bbf50b7",
+                resource_type: "image",
+              },
+            },
+          },
+          hash: "bride_adjusting_her_boyfriend_s_bow_tie_ad1bbf50b7",
+          ext: ".webp",
+          mime: "image/webp",
+          size: 128.42,
+          url: "https://res.cloudinary.com/de5rrszh7/image/upload/v1727440847/Suits/bride_adjusting_her_boyfriend_s_bow_tie_ad1bbf50b7.webp",
+          previewUrl: null,
+          provider: "cloudinary",
+          provider_metadata: {
+            public_id:
+              "Suits/bride_adjusting_her_boyfriend_s_bow_tie_ad1bbf50b7",
+            resource_type: "image",
+          },
+          createdAt: "2024-09-27T12:40:48.299Z",
+          updatedAt: "2024-09-27T12:40:48.299Z",
+        },
+      },
+    },
+  },
 };
