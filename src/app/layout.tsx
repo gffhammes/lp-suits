@@ -44,7 +44,7 @@ export default function RootLayout({
       <GoogleTagManager gtmId="GTM-MPDH9DPN" />
       <GoogleTagManager gtmId="GTM-TRBSTKML" />
 
-      <Script
+      {/* <Script
         id="microsoft-clarity-init"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
@@ -56,7 +56,7 @@ export default function RootLayout({
           })(window, document, "clarity", "script", "obu7zfg6eu");
                 `,
         }}
-      />
+      /> */}
     </html>
   );
 }
